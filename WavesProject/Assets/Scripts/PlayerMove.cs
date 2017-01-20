@@ -54,12 +54,12 @@ public class PlayerMove : MonoBehaviour {
         {
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
-                transform.Translate(-landSpeed, 0, 0);
+                rig.AddForce(new Vector2(-landSpeed, 0));
 
             }
             else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
             {
-                transform.Translate(landSpeed, 0, 0);
+                rig.AddForce(new Vector2(landSpeed, 0));
             }
         }
         else if (inWater)
@@ -68,12 +68,13 @@ public class PlayerMove : MonoBehaviour {
 
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
-                transform.Translate(-waterSpeed, 0, 0);
+                rig.AddForce(new Vector2(-waterSpeed, 0));
 
             }
             else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
             {
-                transform.Translate(waterSpeed, 0, 0);
+                rig.AddForce(new Vector2(waterSpeed, 0));
+
             }
 
 
@@ -93,7 +94,7 @@ public class PlayerMove : MonoBehaviour {
          
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && grounded || Input.GetKeyDown(KeyCode.W) && grounded || Input.GetKeyDown(KeyCode.UpArrow) && grounded)
+        if (Input.GetKeyDown(KeyCode.Space) && grounded || Input.GetKeyDown(KeyCode.W) && grounded || Input.GetKeyDown(KeyCode.UpArrow) && grounded || Input.GetKeyDown(KeyCode.W) && inWater)
         {
             rig.AddForce(new Vector2(0, jumpForce));
 
@@ -101,15 +102,6 @@ public class PlayerMove : MonoBehaviour {
          //   rig.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
 
-    }
-
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        //if (col.gameObject.layer == LayerMask.NameToLayer("Water") && Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
-        //{
-
-        //    Physics2D.IgnoreCollision(col.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
-        //}
     }
         
 }
