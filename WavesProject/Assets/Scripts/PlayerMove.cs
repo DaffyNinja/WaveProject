@@ -45,7 +45,7 @@ public class PlayerMove : MonoBehaviour {
         if (grounded)
         {
             onLand = true;
-            rig.constraints = RigidbodyConstraints2D.None;
+           // rig.constraints = RigidbodyConstraints2D.None;
         }
 
         if (onLand)
@@ -90,7 +90,7 @@ public class PlayerMove : MonoBehaviour {
             rig.AddForce(new Vector2(0, jumpForce));
 
             transform.localEulerAngles = new Vector3(0, 0, 0);
-            rig.constraints = RigidbodyConstraints2D.FreezeRotation;
+         //   rig.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
 
     }
