@@ -22,9 +22,7 @@ public class PlayerMove : MonoBehaviour {
 
     // Add Dive
 
-
     Rigidbody2D rig;
-
 
 
     // Use this for initialization
@@ -39,6 +37,13 @@ public class PlayerMove : MonoBehaviour {
     void Update()
     {
         grounded = Physics2D.Linecast(transform.position, new Vector2(transform.position.x, transform.position.y - groundCheck), 1 << LayerMask.NameToLayer("Ground"));
+        inWater = Physics2D.Linecast(transform.position, new Vector2(transform.position.x, transform.position.y - groundCheck), 1 << LayerMask.NameToLayer("Water"));
+
+        if (grounded)
+        {
+            onLand = true;
+            rig.constraints = RigidbodyConstraints2D.None;
+        }
 
         if (onLand)
         {
@@ -64,23 +69,19 @@ public class PlayerMove : MonoBehaviour {
                 transform.Translate(waterSpeed, 0, 0);
             }
 
-            if (Input.GetKeyDown(KeyCode.DownArrow))
+            if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
             {
                 rig.AddForce(new Vector2(0, -diveForce));
             }
-
-
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && grounded)
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) && grounded)
         {
             rig.AddForce(new Vector2(0, jumpForce));
+
+            transform.localEulerAngles = new Vector3(0, 0, 0);
+            rig.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
-
-
-
-
-
 
     }
 }
