@@ -4,33 +4,59 @@ using System.Collections;
 
 public class Wave_Ver2 : MonoBehaviour {
 
-    static int size = 200; // Number of vertices
-    static float velocityDamping = 1f; // Proprotional velocity damping, must be less than or equal to 1.
+    [Header("Wave Values")]
+    public float width;
+    //public int density;
+    public float startDelay;
+    public float waveHeight;
+    public float frequency;
+
+    [Space(10)]
+    public float xpos;
+    public float ypos;
+    [Space(10)]
+    public float xspeed;
+    public float yspeed;
+
+    int density = 1;
+    int size = 200; // Number of vertices
+    //static float velocityDamping = 1f; // Proprotional velocity damping, must be less than or equal to 1.
     static float timeScale = 50f;
 
-    float[] newHeight = new float[size];
-    float[] velocity = new float[size];
+    //float[] newHeight = new float[size];
+    //float[] velocity = new float[size];
+    float[] newHeight;
+    float[] velocity;
 
     //David defined
     float time = 0f;
-    float time2 = 0f;
-    bool triggered = false;
-    bool triggered2 = false;
+    //float time2 = 0f;
+    //bool triggered = false;
+    //bool triggered2 = false;
 
     float pi = (float)Math.PI;
 
-    GameObject[] vertex = new GameObject[size];
+    //GameObject[] vertex = new GameObject[size];
+    GameObject[] vertex;
 
+    [Space(10)]
     public GameObject waveSprite;
 
 
     void Start()
     {
+        size = size * density;
+
+        newHeight = new float[size];
+        velocity = new float[size];
+
+        vertex = new GameObject[size];
+
         // we'll use spheres to represent each vertex for demonstration purposes
         for (int i = 0; i < size; i++)
         {
             vertex[i] = Instantiate(waveSprite);
-            vertex[i].transform.position = new Vector2(i - size / 2, 0);
+            vertex[i].transform.position = new Vector2(((float)i - size / 2) * width/ 4 + xpos, 0 + ypos);
         }
     }
 
@@ -54,10 +80,10 @@ public class Wave_Ver2 : MonoBehaviour {
                 newHeight[i] = (vertex[i].transform.position.y + vertex[k].transform.position.y + vertex[k].transform.position.y + vertex[k].transform.position.y) / 4f;
             }
             //David's code
-            if (time >= 3f && i == size - 1 /*&& triggered == false*/)
+            if (time >= startDelay && i == size - 1 /*&& triggered == false*/)
             {
-                newHeight[i] = 30f * (float)Math.Cos((time / 12) * 180 / pi);
-                triggered = true;
+                newHeight[i] = waveHeight * (float)Math.Cos((time * frequency / 12) * 180 / pi);
+                //triggered = true;
             }
             //if (time >= 3.2f && i == size - 1 /*&& triggered == false*/)
             //{
@@ -80,7 +106,7 @@ public class Wave_Ver2 : MonoBehaviour {
             //newHeight[i] = velocity[i];// * timeFactor;
 
             // update the vertex position
-            Vector3 newPosition = new Vector3(vertex[i].transform.position.x, newHeight[i], vertex[i].transform.position.z);
+            Vector2 newPosition = new Vector2(xspeed + vertex[i].transform.position.x, yspeed + newHeight[i]);
             vertex[i].transform.position = newPosition;
         }
     }

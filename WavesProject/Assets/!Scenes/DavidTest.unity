@@ -189,6 +189,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3ab7a10d1d4f04498521eb31a10153a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  width: 1
+  startDelay: 0
+  waveHeight: 5
+  frequency: 1
+  xpos: 0
+  ypos: 0
+  xspeed: 0
+  yspeed: 0
   waveSprite: {fileID: 1000013986680110, guid: 3dd25e18c69dc4640beba35e8817390f, type: 2}
 --- !u!1 &868187650
 GameObject:
