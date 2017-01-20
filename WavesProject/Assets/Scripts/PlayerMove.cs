@@ -19,6 +19,8 @@ public class PlayerMove : MonoBehaviour {
     public bool inWater;
 
     public float diveForce;
+    public bool inSea;
+    bool goDive;
 
     // Add Dive
 
@@ -38,6 +40,7 @@ public class PlayerMove : MonoBehaviour {
     {
         grounded = Physics2D.Linecast(transform.position, new Vector2(transform.position.x, transform.position.y - groundCheck), 1 << LayerMask.NameToLayer("Ground"));
         inWater = Physics2D.Linecast(transform.position, new Vector2(transform.position.x, transform.position.y - groundCheck), 1 << LayerMask.NameToLayer("Water"));
+        inSea = Physics2D.Linecast(transform.position, new Vector2(transform.position.x, transform.position.y - groundCheck), 1 << LayerMask.NameToLayer("Sea"));
 
         if (grounded)
         {
@@ -59,6 +62,8 @@ public class PlayerMove : MonoBehaviour {
         }
         else if (inWater)
         {
+           // print("Water");
+
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
                 transform.Translate(-waterSpeed, 0, 0);
@@ -69,10 +74,15 @@ public class PlayerMove : MonoBehaviour {
                 transform.Translate(waterSpeed, 0, 0);
             }
 
-            if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+
+
+            if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
             {
                 rig.AddForce(new Vector2(0, -diveForce));
+
+                //GetComponent<Collider2D>().enabled = false;
             }
+         
         }
 
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) && grounded)
@@ -84,4 +94,14 @@ public class PlayerMove : MonoBehaviour {
         }
 
     }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        //if (col.gameObject.layer == LayerMask.NameToLayer("Water") && Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+        //{
+
+        //    Physics2D.IgnoreCollision(col.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        //}
+    }
+        
 }
