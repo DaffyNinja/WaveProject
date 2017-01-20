@@ -79,3 +79,5 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+WavesProject/Library/ScriptAssemblies/Assembly-CSharp.dll
+WavesProject/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb
