@@ -22,6 +22,8 @@ public class PlayerMove : MonoBehaviour {
     public bool inSea;
     bool goDive;
 
+    float timer = 0f;
+
     // Add Dive
 
     Rigidbody2D rig;
@@ -76,11 +78,17 @@ public class PlayerMove : MonoBehaviour {
 
 
 
-            if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+            if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
             {
                 rig.AddForce(new Vector2(0, -diveForce));
 
                 //GetComponent<Collider2D>().enabled = false;
+            }
+
+            if(timer > 0)
+            {
+                rig.AddForce(new Vector2(0, -diveForce * (timer / 2f)));
+                timer -= Time.deltaTime;
             }
          
         }

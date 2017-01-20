@@ -19,7 +19,7 @@ public class Wave_VerII : MonoBehaviour {
     public float yspeed;
 
     int density = 1;
-    int size = 200; // Number of vertices
+    int size = 100; // Number of vertices
     //static float velocityDamping = 1f; // Proprotional velocity damping, must be less than or equal to 1.
     static float timeScale = 50f;
 
@@ -56,7 +56,7 @@ public class Wave_VerII : MonoBehaviour {
         for (int i = 0; i < size; i++)
         {
             vertex[i] = Instantiate(waveSprite);
-            vertex[i].transform.position = new Vector2(((float)i - size / 2) * width/ 4 + xpos, 0 + ypos);
+            vertex[i].transform.position = new Vector2(((float)i - size / 2) * width/ 2 + xpos, 0 + ypos);
         }
     }
 

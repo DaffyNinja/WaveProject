@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012180690916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.32, y: 3.95, z: 0}
+  m_LocalPosition: {x: 0.06, y: 3.7, z: 0}
   m_LocalScale: {x: 0.1, y: 0.25, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -59,7 +59,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &61000012523966574
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -92,7 +92,8 @@ MonoBehaviour:
   grounded: 0
   waterSpeed: 0.075
   inWater: 0
-  diveForce: 1000
+  diveForce: 7000
+  inSea: 0
 --- !u!212 &212000013727855880
 SpriteRenderer:
   m_ObjectHideFlags: 1
