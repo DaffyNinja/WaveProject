@@ -80,17 +80,20 @@ public class PlayerMove : MonoBehaviour {
 
             if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
             {
-                rig.AddForce(new Vector2(0, -diveForce));
-
+                if (timer <= 0f)
+                {
+                    rig.AddForce(new Vector2(0, -diveForce));
+                    timer = 2f;
+                }
                 //GetComponent<Collider2D>().enabled = false;
             }
 
-            if(timer > 0)
+            if(timer > 1)
             {
-                rig.AddForce(new Vector2(0, -diveForce * (timer / 2f)));
-                timer -= Time.deltaTime;
+                rig.AddForce(new Vector2(0, -diveForce * ((timer - 1) / 1f)));
             }
-         
+            timer -= Time.deltaTime;
+
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && grounded || Input.GetKeyDown(KeyCode.W) && grounded || Input.GetKeyDown(KeyCode.UpArrow) && grounded)

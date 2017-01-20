@@ -30,6 +30,7 @@ public class Wave_VerII : MonoBehaviour {
 
     //David defined
     float time = 0f;
+    float totalLength = 0f;
     //float time2 = 0f;
     //bool triggered = false;
     //bool triggered2 = false;
@@ -47,10 +48,10 @@ public class Wave_VerII : MonoBehaviour {
     {
         size = size * density;
 
-        newHeight = new float[size];
-        velocity = new float[size];
+        newHeight = new float[size * 4];
+        velocity = new float[size * 4];
 
-        vertex = new GameObject[size];
+        vertex = new GameObject[size * 4];
 
         // we'll use spheres to represent each vertex for demonstration purposes
         for (int i = 0; i < size; i++)
@@ -58,6 +59,7 @@ public class Wave_VerII : MonoBehaviour {
             vertex[i] = Instantiate(waveSprite);
             vertex[i].transform.position = new Vector2(((float)i - size / 2) * width/ 2 + xpos, 0 + ypos);
         }
+        totalLength = vertex[size - 1].transform.position.x - vertex[0].transform.position.x;
     }
 
     void Update()
@@ -66,6 +68,17 @@ public class Wave_VerII : MonoBehaviour {
         //this determines the y value and the y value alone.
 
         time += Time.deltaTime;
+
+        //generate new waves
+        if(vertex[size-1].transform.position.x < 15f)
+        {
+            for (int i = size; i < size + size; i++)
+            {
+                vertex[i] = Instantiate(waveSprite);
+                vertex[i].transform.position = new Vector2(((float)i - size / 2f) * width / 2f + xpos - 3.4f, 0 + ypos);
+            }
+            size += size;
+        }
 
         for (int i = 1; i <= size - 1; i++)
         {
