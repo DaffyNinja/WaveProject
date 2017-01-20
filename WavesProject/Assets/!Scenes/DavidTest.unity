@@ -192,10 +192,10 @@ MonoBehaviour:
   width: 0.75
   startDelay: 0
   waveHeight: 0.75
-  frequency: 0.75
+  frequency: 0.5
   xpos: 0
   ypos: 0
-  xspeed: 0
+  xspeed: -0.01
   yspeed: 0
   waveSprite: {fileID: 1000013986680110, guid: 3dd25e18c69dc4640beba35e8817390f, type: 2}
 --- !u!1001 &694858539
@@ -207,11 +207,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000010444778792, guid: c344c854ae81b954bb94f28b4d3209b4, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.06
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 4000010444778792, guid: c344c854ae81b954bb94f28b4d3209b4, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.7
+      value: 9.99
       objectReference: {fileID: 0}
     - target: {fileID: 4000010444778792, guid: c344c854ae81b954bb94f28b4d3209b4, type: 2}
       propertyPath: m_LocalPosition.z
