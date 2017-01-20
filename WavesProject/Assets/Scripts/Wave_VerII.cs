@@ -2,7 +2,7 @@
 using System;
 using System.Collections;
 
-public class Wave_Ver2 : MonoBehaviour {
+public class Wave_VerII : MonoBehaviour {
 
     [Header("Wave Values")]
     public float width;
