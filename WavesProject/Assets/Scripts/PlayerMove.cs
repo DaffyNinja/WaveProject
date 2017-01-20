@@ -85,7 +85,7 @@ public class PlayerMove : MonoBehaviour {
          
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) && grounded)
+        if (Input.GetKeyDown(KeyCode.Space) && grounded || Input.GetKeyDown(KeyCode.W) && grounded || Input.GetKeyDown(KeyCode.UpArrow) && grounded)
         {
             rig.AddForce(new Vector2(0, jumpForce));
 

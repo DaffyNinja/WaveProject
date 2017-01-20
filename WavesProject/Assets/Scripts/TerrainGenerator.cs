@@ -7,10 +7,13 @@ public class TerrainGenerator : MonoBehaviour
 
     public List<GameObject> terrainPieces;
 
-    public bool create;
+    public float terrainDis;
+    public float destroyNum;
 
+    bool create;
     GameObject[] tracks;
-
+    [Space(10)]
+    public float yDis;
     public Transform playerTrans;
     Vector2 playerPos;
 
@@ -32,17 +35,28 @@ public class TerrainGenerator : MonoBehaviour
 
     void TrackMaintanennce()
     {
+        GameObject[] terrainObjs = GameObject.FindGameObjectsWithTag("Track");
+
+        foreach (GameObject ter in terrainObjs)
+        {
+            if (ter.transform.position.x < playerTrans.position.x - destroyNum)
+            {
+                Destroy(ter);
+            }
+
+        }
+
         TrackPositions();
 
     }
 
     void TrackPositions()
     {
-        Vector2 pos1 = new Vector2(playerTrans.position.x + 10, playerPos.y);
-        Vector2 pos2 = new Vector2(playerTrans.position.x + 20, playerPos.y);
-        Vector2 pos3 = new Vector2(playerTrans.position.x + 30, playerPos.y);
-        Vector2 pos4 = new Vector2(playerTrans.position.x + 40, playerPos.y);
-        Vector2 pos5 = new Vector2(playerTrans.position.x + 50, playerPos.y);
+        Vector2 pos1 = new Vector2(playerTrans.position.x + terrainDis, playerPos.y - yDis);
+        Vector2 pos2 = new Vector2(playerTrans.position.x + terrainDis * 2, playerPos.y - yDis);
+        Vector2 pos3 = new Vector2(playerTrans.position.x + terrainDis * 3, playerPos.y - yDis);
+        Vector2 pos4 = new Vector2(playerTrans.position.x + terrainDis * 4, playerPos.y - yDis);
+        Vector2 pos5 = new Vector2(playerTrans.position.x + terrainDis * 5, playerPos.y - yDis);
 
         TrackCreate(pos1, pos2, pos3, pos4, pos5);
 
@@ -55,7 +69,7 @@ public class TerrainGenerator : MonoBehaviour
 
         foreach (GameObject t in tracks)
         {
-            if (trackPos1.x > t.transform.position.x)
+            if (trackPos1.x < t.transform.position.x)
             {
                 create = false;
             }
