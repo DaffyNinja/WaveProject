@@ -1596,16 +1596,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startDelay: 0
-  waveHeight: 0
-  frequency: 0
+  waveHeight: 1
+  frequency: 1
   xpos: 0
-  ypos: 0
+  ypos: -10
   xspeed: 0
   yspeed: 0
   generateDistance: 0
   destroyDistance: 0
-  waveSprite: {fileID: 0}
-  waveParent: {fileID: 0}
+  waveSprite: {fileID: 1000013986680110, guid: 3dd25e18c69dc4640beba35e8817390f, type: 2}
+  waveParent: {fileID: 1991644506}
 --- !u!1 &1580277534
 GameObject:
   m_ObjectHideFlags: 0

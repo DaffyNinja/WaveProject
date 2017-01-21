@@ -543,18 +543,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114000013006251622, guid: f1ee312ec18b05745b79521c2adbac69,
         type: 2}
-      propertyPath: waterSpeed
-      value: 15
+      propertyPath: diveSpeed
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 114000013006251622, guid: f1ee312ec18b05745b79521c2adbac69,
         type: 2}
-      propertyPath: waterJumpForce
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013006251622, guid: f1ee312ec18b05745b79521c2adbac69,
-        type: 2}
-      propertyPath: airMoveSpeed
-      value: 5
+      propertyPath: diveForce
+      value: 250
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1ee312ec18b05745b79521c2adbac69, type: 2}
@@ -826,7 +821,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1340780116
 MonoBehaviour:
   m_ObjectHideFlags: 0

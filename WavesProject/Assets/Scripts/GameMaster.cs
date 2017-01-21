@@ -94,15 +94,15 @@ public class GameMaster : MonoBehaviour {
 
         // Increase dificulty
 
-        if (pause == true)
-        {
-            Time.timeScale = 0;
-        }
-        else
-        {
-            Time.timeScale = 1;
+        //if (pause == true)
+        //{
+        //    Time.timeScale = 0;
+        //}
+        //else
+        //{
+        //    Time.timeScale = 1;
 
-        }
+        //}
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {

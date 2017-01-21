@@ -28,6 +28,9 @@ public class PlayerMove : MonoBehaviour
     public bool inSea;
     bool goDive;
 
+    float diveTimer;
+    bool diving;
+
     float timer = 0f;
 
     // Add Dive
@@ -125,15 +128,19 @@ public class PlayerMove : MonoBehaviour
             }
 
 
+            if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+            {
+                diving = true;
+                diveTimer = 0;
+            }
 
+            //diving continues, count the timer and add the force accordigly
             if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
             {
 
-                float diveTimer = 0;
-
                 diveTimer += Time.deltaTime;
 
-                if (diveTimer >= 3)
+                if (diveTimer >= 2f)
                 {
                     inSea = false;
                 }
@@ -144,8 +151,7 @@ public class PlayerMove : MonoBehaviour
 
                 if (inSea == true)
                 {
-                    rig.AddForce(new Vector2(0, -diveForce));
-
+                    rig.AddForce(new Vector2(0, -diveForce + (diveForce * diveTimer) / 2f));
 
                     if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
                     {
@@ -160,9 +166,8 @@ public class PlayerMove : MonoBehaviour
                 }
                 else
                 {
-                    rig.AddForce(new Vector2(0, diveForce * 2));
+                    rig.AddForce(new Vector2(0, diveForce / 10));
                 }
-                
             }
 
         }

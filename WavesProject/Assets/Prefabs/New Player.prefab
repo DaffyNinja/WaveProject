@@ -108,10 +108,10 @@ MonoBehaviour:
   jumpForce: 125
   groundCheck: 1
   grounded: 0
-  airMoveSpeed: 15
-  waterSpeed: 25
+  airMoveSpeed: 5
+  waterSpeed: 15
   inWater: 0
-  waterJumpForce: 25
+  waterJumpForce: 15
   diveForce: 750
   diveSpeed: 0
   inSea: 0
