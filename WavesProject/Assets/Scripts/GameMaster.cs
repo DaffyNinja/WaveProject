@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class GameMaster : MonoBehaviour {
 
-    [Header("Diificulty")]
+    [Header("Dificulty")]
     public float easyTime;
     public float mediumTime;
     public float hardTime;
@@ -17,12 +17,16 @@ public class GameMaster : MonoBehaviour {
 
     public bool pause;
 
+    public Wave_VerII waveManager;
+
 	// Use this for initialization
 	void Start ()
     {
         pause = false;
 
         difficultyTimer = 0;
+
+        isEasy = true;
 	
 	}
 	
@@ -31,17 +35,32 @@ public class GameMaster : MonoBehaviour {
     {
         difficultyTimer += Time.deltaTime;
 
-        if (difficultyTimer >= easyTime)
-        {
-            //Easy
-        }
-        else if (difficultyTimer >= mediumTime)
+
+        if (difficultyTimer >= mediumTime)
         {
             //Medium
+
+            print("Medium");
+
+            isEasy = false;
+
+
+            isMedium = true;
+
+            waveManager.waveHeight = 1.5f;
+            waveManager.frequency = 1f;
+
         }
-        else if (difficultyTimer >= hardTime)
+        if (difficultyTimer >= hardTime)
         {
             // Hard
+            print("Hard");
+
+            isMedium = false;
+            isHard = true;
+
+            waveManager.waveHeight = 2.25f;
+            waveManager.frequency = 1.5f;
         }
 
         // Increase dificulty

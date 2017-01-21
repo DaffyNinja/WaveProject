@@ -189,6 +189,16 @@ Prefab:
       propertyPath: jumpForce
       value: 550
       objectReference: {fileID: 0}
+    - target: {fileID: 114000011965359940, guid: c344c854ae81b954bb94f28b4d3209b4,
+        type: 2}
+      propertyPath: waterJumpForce
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011965359940, guid: c344c854ae81b954bb94f28b4d3209b4,
+        type: 2}
+      propertyPath: diveForce
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c344c854ae81b954bb94f28b4d3209b4, type: 2}
   m_IsPrefabParent: 0
@@ -258,6 +268,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 632a919451a9c734e9eb5195b18750b4, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &739257799 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000012673956360, guid: 632a919451a9c734e9eb5195b18750b4,
+    type: 2}
+  m_PrefabInternal: {fileID: 739257798}
+  m_Script: {fileID: 11500000, guid: f3ab7a10d1d4f04498521eb31a10153a, type: 3}
 --- !u!1 &1340780115
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,6 +373,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1634307258}
+  - 114: {fileID: 1634307259}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -377,6 +394,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
+--- !u!114 &1634307259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1634307257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 324c6e95708e98c4ba9e59261bd19239, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  easyTime: 0
+  mediumTime: 5
+  hardTime: 10
+  isEasy: 0
+  isMedium: 0
+  isHard: 0
+  pause: 0
+  waveManager: {fileID: 739257799}
 --- !u!1001 &2020175809
 Prefab:
   m_ObjectHideFlags: 0
