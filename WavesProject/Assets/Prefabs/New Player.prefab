@@ -147,13 +147,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abc572ef659adce459f2be10745e9c27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  landSpeed: 25
+  landSpeed: 20
   onLand: 0
-  jumpForce: 125
+  jumpForce: 100
   groundCheck: 1.25
   grounded: 0
   airMoveSpeed: 5
-  waterSpeed: 15
+  waterSpeed: 7
   inWater: 0
   waterJumpForce: 20
   diveForce: 50

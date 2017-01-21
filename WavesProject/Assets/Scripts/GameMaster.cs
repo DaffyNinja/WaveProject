@@ -15,6 +15,8 @@ public class GameMaster : MonoBehaviour {
     public float easyWaveHeight;
     public float easyWaveFrequency;
 
+    public float easyCameraSpeed;
+
 
     [Header("Medium")]
     public float mediumTime;
@@ -25,6 +27,8 @@ public class GameMaster : MonoBehaviour {
 
     public float medWaveHeight;
     public float medWaveFrequency;
+
+    public float mediumCameraSpeed;
     [Header("Hard")]
     public float hardTime;
     public bool isHard;
@@ -35,6 +39,8 @@ public class GameMaster : MonoBehaviour {
     public float hardWaveHeight;
     public float hardWaveFrequency;
 
+    public float hardCameraSpeed;
+
     float difficultyTimer;
 
     [FMODUnity.EventRefAttribute]
@@ -42,6 +48,7 @@ public class GameMaster : MonoBehaviour {
 
     public bool pause;
 
+    public CameraMoveII camMove;
     public DebrisSpawn debrisSpwn;
     public Wave_VerIIII waveManager;
 
@@ -54,22 +61,11 @@ public class GameMaster : MonoBehaviour {
 
         isEasy = true;
 
-        musicSfx = FMODUnity.RuntimeManager.CreateInstance("event:/bgm/bgm_MASTER");
-
     }
 
     // Update is called once per frame
     void Update()
     {
-
-
-        //FMOD.Studio.PLAYBACK_STATE play_bgm;
-        //musicSfx.getPlaybackState(out play_bgm);
-        //if (play_bgm != FMOD.Studio.PLAYBACK_STATE.PLAYING)
-        //{
-        //    musicSfx.start();
-        //}
-
 
 
         difficultyTimer += Time.deltaTime;
@@ -84,6 +80,8 @@ public class GameMaster : MonoBehaviour {
             waveManager.waveHeight = easyWaveHeight;
             waveManager.frequency = easyWaveFrequency;
 
+            camMove.speed = easyCameraSpeed;
+
         }
         else if (difficultyTimer >= mediumTime) //Medium
         {
@@ -91,6 +89,7 @@ public class GameMaster : MonoBehaviour {
             isEasy = false;
             isMedium = true;
 
+            camMove.speed = mediumCameraSpeed;
 
             debrisSpwn.spawnTime = medDebriSpwnTime;
             debrisSpwn.speed = medDebriSpeed;
@@ -104,6 +103,8 @@ public class GameMaster : MonoBehaviour {
             isMedium = false;
             isHard = true;
 
+            camMove.speed = hardCameraSpeed;
+
             debrisSpwn.spawnTime = hardDebriSpwnTime;
             debrisSpwn.speed = hardDebriSpeed;
 
@@ -111,22 +112,9 @@ public class GameMaster : MonoBehaviour {
             waveManager.frequency = hardWaveFrequency;
         }
 
-        // Increase dificulty
-
-        //if (pause == true)
-        //{
-        //    Time.timeScale = 0;
-        //}
-        //else
-        //{
-        //    Time.timeScale = 1;
-
-        //}
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            //SceneManager.LoadScene(0);
-
             pause = !pause;
         }
 
