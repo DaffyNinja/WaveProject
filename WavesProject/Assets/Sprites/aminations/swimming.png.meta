@@ -1,9 +1,16 @@
 fileFormatVersion: 2
 guid: a0d71f6d5c5be3e4ebba2203ffd5b2b2
-timeCreated: 1484979821
+timeCreated: 1484981549
 licenseType: Pro
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: swimming_0
+    21300002: swimming_1
+    21300004: swimming_2
+    21300006: swimming_3
+    21300008: swimming_4
+    21300010: swimming_5
+    21300012: swimming_6
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,7 +45,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -51,7 +58,98 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: swimming_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 1087
+        width: 722
+        height: 824
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swimming_1
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 1070
+        width: 638
+        height: 851
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swimming_2
+      rect:
+        serializedVersion: 2
+        x: 1510
+        y: 1027
+        width: 590
+        height: 922
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swimming_3
+      rect:
+        serializedVersion: 2
+        x: 2274
+        y: 1090
+        width: 554
+        height: 878
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swimming_4
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 5
+        width: 502
+        height: 922
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swimming_5
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 20
+        width: 596
+        height: 919
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: swimming_6
+      rect:
+        serializedVersion: 2
+        x: 1510
+        y: 11
+        width: 712
+        height: 926
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 

@@ -27,11 +27,13 @@ public class PlayerMove : MonoBehaviour {
     // Add Dive
 
     Rigidbody2D rig;
+    Animator animate;
 
 
     // Use this for initialization
     void Awake()
     {
+        animate = GetComponent<Animator>();
 
         rig = GetComponent<Rigidbody2D>();
 
@@ -52,6 +54,8 @@ public class PlayerMove : MonoBehaviour {
 
         if (onLand)
         {
+            animate.SetBool("InWaterAn", false);
+
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
                 rig.AddForce(new Vector2(-landSpeed, 0));
@@ -64,7 +68,9 @@ public class PlayerMove : MonoBehaviour {
         }
         else if (inWater)
         {
-           // print("Water");
+            // print("Water");
+
+            animate.SetBool("InWaterAn", true);
 
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
@@ -96,6 +102,7 @@ public class PlayerMove : MonoBehaviour {
             timer -= Time.deltaTime;
 
         }
+
 
         if (Input.GetKeyDown(KeyCode.Space) && grounded || Input.GetKeyDown(KeyCode.W) && grounded || Input.GetKeyDown(KeyCode.UpArrow) && grounded || Input.GetKeyDown(KeyCode.W) && inWater)
         {
