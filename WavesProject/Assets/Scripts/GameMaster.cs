@@ -6,13 +6,33 @@ public class GameMaster : MonoBehaviour
 {
 
     [Header("Dificulty")]
-    float easyTime;
-    public float mediumTime;
-    public float hardTime;
+    [Header("Easy")]
+    public float easyDebriSpwnTime;
+    public float easyDebriSpeed;
 
+    public float easyWaveHeight;
+    public float easyWaveFrequency;
+
+    float easyTime;
     bool isEasy;
+    [Header("Medium")]
+    public float mediumTime;
     public bool isMedium;
+
+    public float medDebriSpwnTime;
+    public float medDebriSpeed;
+
+    public float medWaveHeight;
+    public float medWaveFrequency;
+    [Header("Hard")]
+    public float hardTime;
     public bool isHard;
+
+    public float hardDebriSpwnTime;
+    public float hardDebriSpeed;
+
+    public float hardWaveHeight;
+    public float hardWaveFrequency;
 
     float difficultyTimer;
 
@@ -37,34 +57,40 @@ public class GameMaster : MonoBehaviour
     {
         difficultyTimer += Time.deltaTime;
 
-
-        if (difficultyTimer >= mediumTime)
+        if (difficultyTimer < easyTime) //Easy
         {
-            //Medium
+
+            debrisSpwn.spawnTime = easyDebriSpwnTime;
+            debrisSpwn.speed = easyDebriSpeed;
+
+            waveManager.waveHeight = easyWaveHeight;
+            waveManager.frequency = easyWaveFrequency;
+
+        }
+        else if (difficultyTimer >= mediumTime) //Medium
+        {
 
             isEasy = false;
             isMedium = true;
 
-            debrisSpwn.spawnTime = 2f;
-            debrisSpwn.speed = 0.075f;
 
-            waveManager.waveHeight = 1f;
-            waveManager.frequency = 0.75f;
+            debrisSpwn.spawnTime = medDebriSpwnTime;
+            debrisSpwn.speed = medDebriSpeed;
 
+            waveManager.waveHeight = medWaveHeight;
+            waveManager.frequency = medWaveFrequency;
         }
-        if (difficultyTimer >= hardTime)
+        if (difficultyTimer >= hardTime) // Hard
         {
-            // Hard
-          //  print("Hard");
 
             isMedium = false;
             isHard = true;
 
-            debrisSpwn.spawnTime = 1f;
-            debrisSpwn.speed = 0.05f;
+            debrisSpwn.spawnTime = hardDebriSpwnTime;
+            debrisSpwn.speed = hardDebriSpeed;
 
-            waveManager.waveHeight = 1.75f;
-            waveManager.frequency = 1f;
+            waveManager.waveHeight = hardWaveHeight;
+            waveManager.frequency = hardWaveFrequency;
         }
 
         // Increase dificulty

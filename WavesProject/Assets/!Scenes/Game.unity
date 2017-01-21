@@ -371,15 +371,27 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1634307257}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 324c6e95708e98c4ba9e59261bd19239, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  easyDebriSpwnTime: 2
+  easyDebriSpeed: 0.1
+  easyWaveHeight: 0.75
+  easyWaveFrequency: 0.35
   mediumTime: 5
-  hardTime: 10
   isMedium: 0
+  medDebriSpwnTime: 1.25
+  medDebriSpeed: 0.075
+  medWaveHeight: 1
+  medWaveFrequency: 0.5
+  hardTime: 10
   isHard: 0
+  hardDebriSpwnTime: 0.5
+  hardDebriSpeed: 0.05
+  hardWaveHeight: 1.25
+  hardWaveFrequency: 0.75
   pause: 0
   debrisSpwn: {fileID: 1340780116}
   waveManager: {fileID: 739257799}
