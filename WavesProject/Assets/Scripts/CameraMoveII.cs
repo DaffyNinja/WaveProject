@@ -6,6 +6,7 @@ public class CameraMoveII : MonoBehaviour {
     public float speed;
 
     public float screenDeathDis;
+    public float rightScreenDis;
     Vector3 pos;
 
     public GameObject ggPanel;
@@ -30,26 +31,35 @@ public class CameraMoveII : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        transform.Translate(speed, 0, 0);
+       
 
         pos = Camera.main.WorldToViewportPoint(playerTrans.position);
 
         if (pos.x < screenDeathDis)
         {
             gameOver = true;
+            transform.Translate(0, 0, 0);
+        }
+        else if (pos.x > 1f - rightScreenDis)
+        {
+            transform.Translate(speed * 25, 0, 0);
+
+            //transform.position = new Vector3(playerTrans.position.x + 5f, transform.position.y, transform.position.z);
+        }
+        else
+        {
+            transform.Translate(speed, 0, 0);
         }
 
         if (gameOver)
         {
             ggPanel.SetActive(true);
 
-            //Time.timeScale = 0;
         }
         else
         {
             ggPanel.SetActive(false);
 
-            //Time.timeScale = 0;
         }
 	
 	}

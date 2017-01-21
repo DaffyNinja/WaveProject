@@ -150,14 +150,14 @@ MonoBehaviour:
   landSpeed: 25
   onLand: 0
   jumpForce: 125
-  groundCheck: 1
+  groundCheck: 1.25
   grounded: 0
   airMoveSpeed: 5
   waterSpeed: 15
   inWater: 0
   waterJumpForce: 20
-  diveForce: 250
-  diveSpeed: 250
+  diveForce: 50
+  diveSpeed: 50
   inSea: 0
 --- !u!212 &212000010454724134
 SpriteRenderer:

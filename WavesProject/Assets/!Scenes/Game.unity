@@ -588,11 +588,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 114000013006251622, guid: f1ee312ec18b05745b79521c2adbac69,
-        type: 2}
-      propertyPath: groundCheck
-      value: 1.25
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1ee312ec18b05745b79521c2adbac69, type: 2}
   m_IsPrefabParent: 0
@@ -1454,6 +1449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.1
   screenDeathDis: -0.075
+  rightScreenDis: 0.15
   ggPanel: {fileID: 924607250}
   gameOver: 0
   playerTrans: {fileID: 433610289}
