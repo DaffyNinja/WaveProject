@@ -883,20 +883,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 1000012180690916, guid: c344c854ae81b954bb94f28b4d3209b4, type: 2}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 50000013706264404, guid: c344c854ae81b954bb94f28b4d3209b4,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000011965359940, guid: c344c854ae81b954bb94f28b4d3209b4,
-        type: 2}
-      propertyPath: landSpeed
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c344c854ae81b954bb94f28b4d3209b4, type: 2}
   m_IsPrefabParent: 0
@@ -930,7 +916,6 @@ MonoBehaviour:
   debrisObj:
   - {fileID: 1000012496565392, guid: c6bb4e0bf4ef93548a5442b0aba14ddd, type: 2}
   spawnTime: 5
-  spawn: 1
 --- !u!4 &1445785427
 Transform:
   m_ObjectHideFlags: 0
