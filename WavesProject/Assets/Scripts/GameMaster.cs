@@ -38,7 +38,7 @@ public class GameMaster : MonoBehaviour {
     public bool pause;
 
     public DebrisSpawn debrisSpwn;
-    public Wave_VerII waveManager;
+    public Wave_VerIII waveManager;
 
     // Use this for initialization
     void Start()
