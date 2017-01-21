@@ -13,14 +13,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114000012159621732}
-  - {fileID: 114000012387717742}
+  - {fileID: 114000010151903734}
   EditorEvents:
   - {fileID: 114000011356347860}
   - {fileID: 114000013078360782}
-  MasterBankRef: {fileID: 114000012387717742}
+  MasterBankRef: {fileID: 114000010151903734}
   StringsBankRef: {fileID: 114000012159621732}
-  stringsBankWriteTime: 636205960810328120
+  stringsBankWriteTime: 636205978547909507
   cacheVersion: 2
+--- !u!114 &114000010151903734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\holiday\Documents\GitHub\WaveProject\WavesProject\FMODAssets\WavesProject_FMOD\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636205978547899507
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1595872
+  Exists: 1
 --- !u!114 &114000011356347860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35,7 +54,7 @@ MonoBehaviour:
   Path: event:/bgm/bgm_MASTER
   guid: 7b43a566c6f75640906b1500d8ba7865
   Banks:
-  - {fileID: 114000012387717742}
+  - {fileID: 114000010151903734}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -54,7 +73,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: FMODAssets\WavesProject_FMOD\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636205960810328120
+  lastModified: 636205978547909507
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -78,7 +97,7 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 1595872
-  Exists: 1
+  Exists: 0
 --- !u!114 &114000013078360782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,7 +112,7 @@ MonoBehaviour:
   Path: event:/sfx/sfx_Wave
   guid: 807e4d5bf346f2408fe18c17b9ea3d7b
   Banks:
-  - {fileID: 114000012387717742}
+  - {fileID: 114000010151903734}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
