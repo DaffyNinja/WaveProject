@@ -2,14 +2,15 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class GameMaster : MonoBehaviour {
+public class GameMaster : MonoBehaviour
+{
 
     [Header("Dificulty")]
-    public float easyTime;
+    float easyTime;
     public float mediumTime;
     public float hardTime;
 
-    public bool isEasy;
+    bool isEasy;
     public bool isMedium;
     public bool isHard;
 
@@ -19,19 +20,19 @@ public class GameMaster : MonoBehaviour {
 
     public Wave_VerII waveManager;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start()
     {
         pause = false;
 
         difficultyTimer = 0;
 
         isEasy = true;
-	
-	}
-	
-	// Update is called once per frame
-	void Update ()
+
+    }
+
+    // Update is called once per frame
+    void Update()
     {
         difficultyTimer += Time.deltaTime;
 
@@ -40,7 +41,7 @@ public class GameMaster : MonoBehaviour {
         {
             //Medium
 
-            print("Medium");
+           // print("Medium");
 
             isEasy = false;
 
@@ -54,7 +55,7 @@ public class GameMaster : MonoBehaviour {
         if (difficultyTimer >= hardTime)
         {
             // Hard
-            print("Hard");
+          //  print("Hard");
 
             isMedium = false;
             isHard = true;
@@ -81,6 +82,6 @@ public class GameMaster : MonoBehaviour {
 
             pause = !pause;
         }
-	
-	}
+
+    }
 }
