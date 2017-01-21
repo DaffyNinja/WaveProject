@@ -22,7 +22,7 @@ GameObject:
   - 212: {fileID: 212000014256827456}
   - 61: {fileID: 61000011011014764}
   - 50: {fileID: 50000011902886820}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: float_can_a
   m_TagString: Untagged
   m_Icon: {fileID: 0}
