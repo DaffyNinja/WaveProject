@@ -143,7 +143,6 @@ public class PlayerMove : MonoBehaviour
             animate.SetBool("InWaterAn", false);
 
             waterSFX.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-
             footstepsSFX.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
 
         }
