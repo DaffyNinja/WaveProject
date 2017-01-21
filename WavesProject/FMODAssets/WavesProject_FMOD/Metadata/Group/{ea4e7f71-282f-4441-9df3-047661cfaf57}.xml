@@ -16,9 +16,63 @@
     </object>
     <object class="MixerBusEffectChain" id="{dc16caf0-479b-4693-95a8-2cd0da718968}">
         <relationship name="effects">
+            <destination>{5cbf99c7-dab5-4479-93b2-a4f3c619740a}</destination>
+            <destination>{ab7cb808-6e20-4ef5-b98d-6244f7053d4a}</destination>
+            <destination>{0ab06a0f-2ede-48eb-89fd-dfba0eef089f}</destination>
             <destination>{2e095324-e257-4fd9-805f-4522a02437a2}</destination>
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{2bba351f-6e1f-4f43-b77e-876ff602502c}"/>
+    <object class="CompressorEffect" id="{5cbf99c7-dab5-4479-93b2-a4f3c619740a}">
+        <property name="threshold">
+            <value>-5</value>
+        </property>
+        <property name="ratio">
+            <value>2.19999981</value>
+        </property>
+        <property name="attackTime">
+            <value>0.100000001</value>
+        </property>
+        <property name="releaseTime">
+            <value>48</value>
+        </property>
+        <property name="sidechainEnabled">
+            <value>true</value>
+        </property>
+    </object>
+    <object class="CompressorEffect" id="{ab7cb808-6e20-4ef5-b98d-6244f7053d4a}">
+        <property name="threshold">
+            <value>-43</value>
+        </property>
+        <property name="ratio">
+            <value>5</value>
+        </property>
+        <property name="attackTime">
+            <value>0.549999952</value>
+        </property>
+        <property name="releaseTime">
+            <value>54</value>
+        </property>
+        <property name="linkChannels">
+            <value>false</value>
+        </property>
+        <property name="sidechainEnabled">
+            <value>true</value>
+        </property>
+    </object>
+    <object class="CompressorEffect" id="{0ab06a0f-2ede-48eb-89fd-dfba0eef089f}">
+        <property name="threshold">
+            <value>-8.5</value>
+        </property>
+        <property name="ratio">
+            <value>9.80000019</value>
+        </property>
+        <property name="attackTime">
+            <value>9</value>
+        </property>
+        <property name="gain">
+            <value>16</value>
+        </property>
+    </object>
     <object class="MixerBusFader" id="{2e095324-e257-4fd9-805f-4522a02437a2}"/>
 </objects>

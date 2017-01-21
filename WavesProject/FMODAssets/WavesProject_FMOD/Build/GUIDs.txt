@@ -1,7 +1,15 @@
 {66a5437b-f7c6-4056-906b-1500d8ba7865} event:/bgm/bgm_MASTER
-{5b4d7e80-46f3-40f2-8fe1-8c17b9ea3d7b} event:/sfx/sfx_Wave
+{582fc313-82ff-49a8-b4c8-a35bce99ac03} event:/sfx/sfx_UI_Play
+{15d88739-ffe1-464f-914f-73bf09f6b882} event:/sfx/sfx_Footsteps
+{5b4d7e80-46f3-40f2-8fe1-8c17b9ea3d7b} event:/sfx/sfx_Wave_Ambience
+{e141c8c6-7631-45fc-b337-a6e5420ac354} event:/sfx/Nested Event
+{8a3498a9-ed29-4e97-b86c-d4b54186e392} event:/sfx/Nested Event (2)
+{8b04dd1b-8475-40c9-afd0-ea76eb43550b} event:/sfx/sfx_Swimming
+{f7efd4d1-098d-4e68-9d42-4d3df27d4d73} event:/sfx_WaterJump
 {1b9aa01d-7188-4064-939e-c7769d3e45f9} bus:/
 {ce096fc0-ecb4-4cc6-89df-08ac0aea9d5c} bus:/sfx
+{49b398be-ca6d-49b9-9799-4c47fad9cb73} bus:/sfx/SFX Ducking
+{83a3f674-4a58-4e64-8fbd-4da53afbdcbc} bus:/sfx/SFXDuck_SOFT
 {ea4e7f71-282f-4441-9df3-047661cfaf57} bus:/bgm
 {c81adda5-3774-4c38-b701-7c0c5bd6b752} bus:/Reverb
 {fb461fe8-c8a4-4643-94a2-a55f702bd795} bank:/Master Bank
