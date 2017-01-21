@@ -541,6 +541,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013006251622, guid: f1ee312ec18b05745b79521c2adbac69,
+        type: 2}
+      propertyPath: waterSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013006251622, guid: f1ee312ec18b05745b79521c2adbac69,
+        type: 2}
+      propertyPath: waterJumpForce
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013006251622, guid: f1ee312ec18b05745b79521c2adbac69,
+        type: 2}
+      propertyPath: airMoveSpeed
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1ee312ec18b05745b79521c2adbac69, type: 2}
   m_IsPrefabParent: 0
@@ -567,7 +582,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 755179805}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 848.21, y: 4.15, z: 0}
+  m_LocalPosition: {x: 858.68, y: 4.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -597,8 +612,8 @@ MonoBehaviour:
   - {fileID: 1000010805808918, guid: 0c40837c76ca0ce498642632df295170, type: 2}
   - {fileID: 1000010993871250, guid: 103116f720fbfbe4b9f8caeec383a017, type: 2}
   - {fileID: 1000010781843648, guid: 3958254204231d8418f292d6eb52e95a, type: 2}
-  spawnTime: 0.5
-  speed: 1
+  spawnTime: 1
+  speed: 0.125
   debrisParent: {fileID: 463386177}
   destroyDistance: 45
 --- !u!1 &924607250
@@ -818,7 +833,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1340780115}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 324c6e95708e98c4ba9e59261bd19239, type: 3}
   m_Name: 
