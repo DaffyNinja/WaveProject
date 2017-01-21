@@ -232,6 +232,11 @@ Prefab:
       propertyPath: waveParent
       value: 
       objectReference: {fileID: 1100868096}
+    - target: {fileID: 114000012673956360, guid: 632a919451a9c734e9eb5195b18750b4,
+        type: 2}
+      propertyPath: ypos
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 632a919451a9c734e9eb5195b18750b4, type: 2}
   m_IsPrefabParent: 0

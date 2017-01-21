@@ -129,7 +129,7 @@ public class Wave_VerII : MonoBehaviour {
             //David's code
             if (time >= startDelay && i == size - 1 /*&& triggered == false*/)
             {
-                newHeight[i] = waveHeight * (float)Math.Cos((time * frequency / 12) * 180 / pi);
+                newHeight[i] = waveHeight * (float)Math.Cos((time * frequency / 12) * 180 / pi) + ypos;
                 //triggered = true;
             }
             //if (time >= 3.2f && i == size - 1 /*&& triggered == false*/)
