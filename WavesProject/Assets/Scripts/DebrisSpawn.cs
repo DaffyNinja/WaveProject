@@ -10,6 +10,14 @@ public class DebrisSpawn : MonoBehaviour {
     float timer;
     [Space(5)]
     public float speed;
+    [Space(10)]
+    public Transform debrisParent;
+    public float destroyDistance;
+
+    GameObject debris;
+    GameObject player;
+    GameObject[] tracker = new GameObject[100];
+    int counter;
 
     bool spawn;
     bool create;
@@ -18,7 +26,7 @@ public class DebrisSpawn : MonoBehaviour {
     void Start ()
     {
         spawn = true;
-	
+        player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	// Update is called once per frame
@@ -42,8 +50,24 @@ public class DebrisSpawn : MonoBehaviour {
 
             if (create == true)
             {
-                Instantiate(debrisObj[Random.Range(0, debrisObj.Count)], new Vector3(transform.position.x,transform.position.y,1), Quaternion.identity);
+                debris = (GameObject)Instantiate(debrisObj[Random.Range(0, debrisObj.Count)], new Vector3(transform.position.x,transform.position.y,1), Quaternion.identity);
+                debris.transform.parent = debrisParent;
+                tracker[counter] = debris;
+                counter++;
+                if(counter >= 100)
+                {
+                    counter = 0;
+                }
+
                 create = false;
+            }
+
+            for(int i = 0; i <= counter; i++)
+            {
+                if (tracker[i] != null && tracker[i].transform.position.x < player.transform.position.x - 20f - destroyDistance)
+                {
+                    Destroy(tracker[i]);
+                }
             }
 
         }
