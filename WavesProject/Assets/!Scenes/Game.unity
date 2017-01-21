@@ -308,6 +308,80 @@ MonoBehaviour:
   inWater: 0
   diveForce: 1000
   inSea: 0
+--- !u!1 &463386176
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 463386177}
+  m_Layer: 0
+  m_Name: Debri Parent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &463386177
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 463386176}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.15, y: 6.26, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+--- !u!1 &755179805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 755179806}
+  - 114: {fileID: 755179807}
+  m_Layer: 0
+  m_Name: Debri Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &755179806
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 755179805}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.27, y: 7.43, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+--- !u!114 &755179807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 755179805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d21815bd4d71a254595d3e896dab88de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debrisObj:
+  - {fileID: 0}
+  spawnTime: 0
+  speed: 0
+  debrisParent: {fileID: 463386177}
+  destroyDistance: 0
 --- !u!1 &1340780115
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,8 +426,8 @@ MonoBehaviour:
   hardWaveHeight: 0
   hardWaveFrequency: 0
   pause: 0
-  debrisSpwn: {fileID: 0}
-  waveManager: {fileID: 0}
+  debrisSpwn: {fileID: 755179807}
+  waveManager: {fileID: 1696568055}
 --- !u!4 &1340780117
 Transform:
   m_ObjectHideFlags: 0
@@ -380,6 +454,7 @@ GameObject:
   - 124: {fileID: 1696568051}
   - 81: {fileID: 1696568050}
   - 114: {fileID: 1696568055}
+  - 114: {fileID: 1696568056}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -476,7 +551,19 @@ MonoBehaviour:
   generateDistance: 0
   destroyDistance: 0
   waveSprite: {fileID: 1000013986680110, guid: 3dd25e18c69dc4640beba35e8817390f, type: 2}
-  waveParent: {fileID: 0}
+  waveParent: {fileID: 205985100}
+--- !u!114 &1696568056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1696568049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f67c86df72422245bdd87493498ac83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.1
 --- !u!1001 &2020175809
 Prefab:
   m_ObjectHideFlags: 0
