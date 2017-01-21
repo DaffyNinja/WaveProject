@@ -678,11 +678,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 726468112}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -215}
-  m_SizeDelta: {x: 320, y: 60}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -52}
+  m_SizeDelta: {x: 750, y: 90}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &807432851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -704,11 +704,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 27
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 90
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -965,7 +965,7 @@ MonoBehaviour:
   hardWaveFrequency: 1.25
   pause: 0
   debrisSpwn: {fileID: 755179807}
-  waveManager: {fileID: 1696568058}
+  waveManager: {fileID: 1696568055}
 --- !u!224 &1340780117
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1359,9 +1359,9 @@ GameObject:
   - 92: {fileID: 1696568052}
   - 124: {fileID: 1696568051}
   - 81: {fileID: 1696568050}
-  - 114: {fileID: 1696568058}
   - 114: {fileID: 1696568056}
   - 114: {fileID: 1696568057}
+  - 114: {fileID: 1696568055}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1437,6 +1437,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &1696568055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1696568049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9db55c54bd0ff494986eaec71698e1e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startDelay: 0
+  waveHeight: 0.75
+  frequency: 0.75
+  xpos: 0
+  ypos: -3.5
+  xspeed: 0
+  yspeed: 0
+  generateDistance: -25
+  destroyDistance: 50
+  waveSprite: {fileID: 1000013986680110, guid: 3dd25e18c69dc4640beba35e8817390f, type: 2}
+  waveParent: {fileID: 205985100}
 --- !u!114 &1696568056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1466,28 +1488,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ListenerNumber: 0
---- !u!114 &1696568058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1696568049}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfc7a84a50424d6468bad9168f4c27b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startDelay: 0
-  waveHeight: 0.75
-  frequency: 0.75
-  xpos: 25
-  ypos: -3.5
-  xspeed: 0
-  yspeed: 0
-  generateDistance: 0
-  destroyDistance: 0
-  waveSprite: {fileID: 1000013986680110, guid: 3dd25e18c69dc4640beba35e8817390f, type: 2}
-  waveParent: {fileID: 205985100}
 --- !u!1001 &1904618295
 Prefab:
   m_ObjectHideFlags: 0

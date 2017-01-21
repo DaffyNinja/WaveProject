@@ -1543,7 +1543,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 30
+  orthographic size: 15
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1599,7 +1599,7 @@ MonoBehaviour:
   waveHeight: 1
   frequency: 1
   xpos: 0
-  ypos: -25
+  ypos: 0
   xspeed: 0
   yspeed: 0
   generateDistance: 0
