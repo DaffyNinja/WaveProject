@@ -22,9 +22,9 @@ public class PlayerMove : MonoBehaviour
 
     public float waterJumpForce;
 
-    //public float diveForce;
-    //public bool inSea;
-    //bool goDive;
+    public float diveForce;
+    public bool inSea;
+    bool goDive;
 
     float timer = 0f;
 
@@ -61,7 +61,7 @@ public class PlayerMove : MonoBehaviour
     {
         grounded = Physics2D.Linecast(transform.position, new Vector2(transform.position.x, transform.position.y - groundCheck), 1 << LayerMask.NameToLayer("Ground"));
         inWater = Physics2D.Linecast(transform.position, new Vector2(transform.position.x, transform.position.y - groundCheck), 1 << LayerMask.NameToLayer("Water"));
-        //inSea = Physics2D.Linecast(transform.position, new Vector2(transform.position.x, transform.position.y - groundCheck), 1 << LayerMask.NameToLayer("Sea"));
+        inSea = Physics2D.Linecast(transform.position, new Vector2(transform.position.x, transform.position.y - groundCheck), 1 << LayerMask.NameToLayer("Sea"));
 
         if (grounded)
         {
@@ -124,21 +124,13 @@ public class PlayerMove : MonoBehaviour
 
 
 
-            //if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
-            //{
-            //    if (timer <= 0f)
-            //    {
-            //        rig.AddForce(new Vector2(0, -diveForce));
-            //        timer = 2f;
-            //    }
-            //    //GetComponent<Collider2D>().enabled = false;
-            //}
+            if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+            {
 
-            //if (timer > 1)
-            //{
-            //    rig.AddForce(new Vector2(0, -diveForce * ((timer - 1) / 1f)));
-            //}
-            //timer -= Time.deltaTime;
+                rig.AddForce(new Vector2(0, -diveForce));
+
+                //GetComponent<Collider2D>().enabled = false;
+            }
 
         }
         else if (inWater == false && onLand == false)
