@@ -10,7 +10,6 @@ public class GameMaster : MonoBehaviour {
     public float easyTime;
 
     public float easyDebriSpwnTime;
-    public float easyDebriSpeed;
 
     public float easyWaveHeight;
     public float easyWaveFrequency;
@@ -23,7 +22,6 @@ public class GameMaster : MonoBehaviour {
     public bool isMedium;
 
     public float medDebriSpwnTime;
-    public float medDebriSpeed;
 
     public float medWaveHeight;
     public float medWaveFrequency;
@@ -34,7 +32,6 @@ public class GameMaster : MonoBehaviour {
     public bool isHard;
 
     public float hardDebriSpwnTime;
-    public float hardDebriSpeed;
 
     public float hardWaveHeight;
     public float hardWaveFrequency;
@@ -75,7 +72,7 @@ public class GameMaster : MonoBehaviour {
             isEasy = true; 
 
             debrisSpwn.spawnTime = easyDebriSpwnTime;
-            debrisSpwn.speed = easyDebriSpeed;
+          //  debrisSpwn.speed = easyDebriSpeed;
 
             waveManager.waveHeight = easyWaveHeight;
             waveManager.frequency = easyWaveFrequency;
@@ -92,7 +89,7 @@ public class GameMaster : MonoBehaviour {
             camMove.speed = mediumCameraSpeed;
 
             debrisSpwn.spawnTime = medDebriSpwnTime;
-            debrisSpwn.speed = medDebriSpeed;
+           // debrisSpwn.speed = medDebriSpeed;
 
             waveManager.waveHeight = medWaveHeight;
             waveManager.frequency = medWaveFrequency;
@@ -106,7 +103,7 @@ public class GameMaster : MonoBehaviour {
             camMove.speed = hardCameraSpeed;
 
             debrisSpwn.spawnTime = hardDebriSpwnTime;
-            debrisSpwn.speed = hardDebriSpeed;
+           // debrisSpwn.speed = hardDebriSpeed;
 
             waveManager.waveHeight = hardWaveHeight;
             waveManager.frequency = hardWaveFrequency;

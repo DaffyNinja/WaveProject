@@ -8,8 +8,8 @@ public class DebrisSpawn : MonoBehaviour {
     [Space(10)]
     public float spawnTime;
     float timer;
-    [Space(5)]
-    public float speed;
+    //[Space(5)]
+    //public float speed;
     [Space(10)]
     public Transform debrisParent;
     public float destroyDistance;
@@ -32,8 +32,8 @@ public class DebrisSpawn : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        transform.Translate(speed, 0, 0);
-
+        //transform.Translate(speed, 0, 0);
+        
         if (spawn == true)
         {
             timer += Time.deltaTime;

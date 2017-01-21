@@ -6,7 +6,7 @@ public class TerrainGenerator : MonoBehaviour
 {
 
     public List<GameObject> terrainPieces;
-
+    [Space(10)]
     public float terrainDis;
     public float destroyNum;
 
