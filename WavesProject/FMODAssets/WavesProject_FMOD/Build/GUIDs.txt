@@ -1,0 +1,7 @@
+{66a5437b-f7c6-4056-906b-1500d8ba7865} event:/bgm/bgm_MASTER
+{5b4d7e80-46f3-40f2-8fe1-8c17b9ea3d7b} event:/sfx/sfx_Wave
+{1b9aa01d-7188-4064-939e-c7769d3e45f9} bus:/
+{ce096fc0-ecb4-4cc6-89df-08ac0aea9d5c} bus:/sfx
+{ea4e7f71-282f-4441-9df3-047661cfaf57} bus:/bgm
+{c81adda5-3774-4c38-b701-7c0c5bd6b752} bus:/Reverb
+{fb461fe8-c8a4-4643-94a2-a55f702bd795} bank:/Master Bank
