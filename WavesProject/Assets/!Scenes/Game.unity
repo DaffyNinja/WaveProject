@@ -588,6 +588,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013006251622, guid: f1ee312ec18b05745b79521c2adbac69,
+        type: 2}
+      propertyPath: landSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013006251622, guid: f1ee312ec18b05745b79521c2adbac69,
+        type: 2}
+      propertyPath: waterSpeed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013006251622, guid: f1ee312ec18b05745b79521c2adbac69,
+        type: 2}
+      propertyPath: jumpForce
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1ee312ec18b05745b79521c2adbac69, type: 2}
   m_IsPrefabParent: 0
@@ -1025,8 +1040,8 @@ MonoBehaviour:
     it.\u201D"
   - "\u201CSo that\u2019s it! Good for you.\u201D"
   storyTextUI: {fileID: 807432851}
-  textTime: 30
-  textStayTime: 7.5
+  textTime: 10
+  textStayTime: 7
 --- !u!1 &1377574662
 GameObject:
   m_ObjectHideFlags: 0
@@ -1470,7 +1485,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f67c86df72422245bdd87493498ac83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.1
+  speed: 0.04
+  speedIncrease: 300
   screenDeathDis: -0.075
   rightScreenDis: 0.15
   ggPanel: {fileID: 924607250}

@@ -4,7 +4,7 @@ using System.Collections;
 public class CameraMoveII : MonoBehaviour {
 
     public float speed;
-
+    public float speedIncrease;
     public float screenDeathDis;
     public float rightScreenDis;
     Vector3 pos;
@@ -42,7 +42,7 @@ public class CameraMoveII : MonoBehaviour {
         }
         else if (pos.x > 1f - rightScreenDis)
         {
-            transform.Translate(speed * 25, 0, 0);
+            transform.Translate(speed * speedIncrease, 0, 0);
 
             //transform.position = new Vector3(playerTrans.position.x + 5f, transform.position.y, transform.position.z);
         }
