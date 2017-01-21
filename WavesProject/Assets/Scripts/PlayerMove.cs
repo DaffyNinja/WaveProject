@@ -14,14 +14,17 @@ public class PlayerMove : MonoBehaviour
 
     public float groundCheck;
     public bool grounded;
+    public float airMoveSpeed;
 
     [Header("Water")]
     public float waterSpeed;
     public bool inWater;
 
-    public float diveForce;
-    public bool inSea;
-    bool goDive;
+    public float waterJumpForce;
+
+    //public float diveForce;
+    //public bool inSea;
+    //bool goDive;
 
     float timer = 0f;
 
@@ -58,7 +61,7 @@ public class PlayerMove : MonoBehaviour
     {
         grounded = Physics2D.Linecast(transform.position, new Vector2(transform.position.x, transform.position.y - groundCheck), 1 << LayerMask.NameToLayer("Ground"));
         inWater = Physics2D.Linecast(transform.position, new Vector2(transform.position.x, transform.position.y - groundCheck), 1 << LayerMask.NameToLayer("Water"));
-        inSea = Physics2D.Linecast(transform.position, new Vector2(transform.position.x, transform.position.y - groundCheck), 1 << LayerMask.NameToLayer("Sea"));
+        //inSea = Physics2D.Linecast(transform.position, new Vector2(transform.position.x, transform.position.y - groundCheck), 1 << LayerMask.NameToLayer("Sea"));
 
         if (grounded)
         {
@@ -121,21 +124,21 @@ public class PlayerMove : MonoBehaviour
 
 
 
-            if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
-            {
-                if (timer <= 0f)
-                {
-                    rig.AddForce(new Vector2(0, -diveForce));
-                    timer = 2f;
-                }
-                //GetComponent<Collider2D>().enabled = false;
-            }
+            //if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+            //{
+            //    if (timer <= 0f)
+            //    {
+            //        rig.AddForce(new Vector2(0, -diveForce));
+            //        timer = 2f;
+            //    }
+            //    //GetComponent<Collider2D>().enabled = false;
+            //}
 
-            if (timer > 1)
-            {
-                rig.AddForce(new Vector2(0, -diveForce * ((timer - 1) / 1f)));
-            }
-            timer -= Time.deltaTime;
+            //if (timer > 1)
+            //{
+            //    rig.AddForce(new Vector2(0, -diveForce * ((timer - 1) / 1f)));
+            //}
+            //timer -= Time.deltaTime;
 
         }
         else if (inWater == false && onLand == false)
@@ -145,17 +148,39 @@ public class PlayerMove : MonoBehaviour
             waterSFX.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             footstepsSFX.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
 
+
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+            {
+                rig.AddForce(new Vector2(-airMoveSpeed, 0));
+
+            }
+            else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+            {
+                rig.AddForce(new Vector2(airMoveSpeed, 0));
+
+            }
+
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Space) && grounded || Input.GetKeyDown(KeyCode.W) && grounded || Input.GetKeyDown(KeyCode.UpArrow) && grounded || Input.GetKeyDown(KeyCode.W) && inWater)
+        if (Input.GetKeyDown(KeyCode.Space) && grounded || Input.GetKeyDown(KeyCode.W) && grounded || Input.GetKeyDown(KeyCode.UpArrow) && grounded)
         {
             rig.AddForce(new Vector2(0, jumpForce));
 
+
             animate.SetBool("jumpAni", true);
 
-            transform.localEulerAngles = new Vector3(0, 0, 0);
+            //  transform.localEulerAngles = new Vector3(0, 0, 0);
             //   rig.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
+        else if (Input.GetKey(KeyCode.W) && inWater || Input.GetKey(KeyCode.Space) && inWater || Input.GetKey(KeyCode.UpArrow) && inWater)
+        {
+            rig.AddForce(new Vector2(0, waterJumpForce));
+
+
+            animate.SetBool("jumpAni", true);
+
+
         }
 
     }
