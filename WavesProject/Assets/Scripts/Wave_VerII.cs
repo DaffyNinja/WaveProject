@@ -17,10 +17,17 @@ public class Wave_VerII : MonoBehaviour {
     [Space(10)]
     public float xspeed;
     public float yspeed;
+    [Space(10)]
+    public float generateDistance; //0f
+    public float destroyDistance; //0f
+
+    GameObject player;
 
     int density = 1;
     int particles;
     int size = 200; // Number of vertices
+    int generateCount = 0;
+    int destroyCount = 0;
     //static float velocityDamping = 1f; // Proprotional velocity damping, must be less than or equal to 1.
     static float timeScale = 50f;
 
@@ -44,6 +51,8 @@ public class Wave_VerII : MonoBehaviour {
     [Space(10)]
     public GameObject waveSprite;
 
+    public Transform waveParent;
+
 
     void Start()
     {
@@ -55,10 +64,13 @@ public class Wave_VerII : MonoBehaviour {
 
         vertex = new GameObject[size * 4];
 
+        player = GameObject.FindGameObjectWithTag("Player");
+
         // we'll use spheres to represent each vertex for demonstration purposes
         for (int i = 0; i < size; i++)
         {
             vertex[i] = Instantiate(waveSprite);
+            vertex[i].transform.parent = waveParent;
             vertex[i].transform.position = new Vector2(((float)i - (float)particles / 2f) * width / 1f + xpos, 0 + ypos);
         }
         totalLength = vertex[size - 1].transform.position.x - vertex[0].transform.position.x;
@@ -72,20 +84,23 @@ public class Wave_VerII : MonoBehaviour {
         time += Time.deltaTime;
 
         //generate new waves
-        if(vertex[size-1].transform.position.x < 80f)
+        if(player.transform.position.x > 50f + generateDistance + totalLength * generateCount)
         {
+            generateCount++;
             float j = 200;
             for (int i = size; i < size + particles; i++)
             {
                 vertex[i] = Instantiate(waveSprite);
-                vertex[i].transform.position = new Vector2(( (float)j - (float)particles / 2f) * width / 1f + xpos -4.5f, 0 + ypos);
+                vertex[i].transform.parent = waveParent;
+                vertex[i].transform.position = new Vector2(( (float)j + (float)(particles * (generateCount - 1) ) - (float)particles / 2f) * width / 1f + xpos, 0 + ypos);
                 j += 1f;
             }
             size += particles;
         }
         //delete old waves
-        if (vertex[particles - 1].transform.position.x < -10f)
+        if (player.transform.position.x > totalLength + destroyDistance + totalLength * destroyCount)
         {
+            destroyCount++;
             for (int i = 0; i < particles; i++)
             {
                 Destroy(vertex[i]);

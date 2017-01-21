@@ -109,9 +109,12 @@ MonoBehaviour:
   frequency: 0.5
   xpos: 35
   ypos: 0
-  xspeed: -0.01
+  xspeed: 0
   yspeed: 0
+  generateDistance: 0
+  destroyDistance: 0
   waveSprite: {fileID: 1000013986680110, guid: 3dd25e18c69dc4640beba35e8817390f, type: 2}
+  waveParent: {fileID: 0}
 --- !u!124 &124000013247728620
 Behaviour:
   m_ObjectHideFlags: 1
