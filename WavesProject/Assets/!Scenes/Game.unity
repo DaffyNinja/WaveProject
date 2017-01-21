@@ -157,6 +157,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114000011965359940, guid: c344c854ae81b954bb94f28b4d3209b4,
+        type: 2}
+      propertyPath: waterJumpForce
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011965359940, guid: c344c854ae81b954bb94f28b4d3209b4,
+        type: 2}
+      propertyPath: waterSpeed
+      value: 12.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c344c854ae81b954bb94f28b4d3209b4, type: 2}
   m_IsPrefabParent: 0
@@ -169,7 +179,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000012534021476, guid: 632a919451a9c734e9eb5195b18750b4, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 6.5
+      value: 4.71
       objectReference: {fileID: 0}
     - target: {fileID: 4000012534021476, guid: 632a919451a9c734e9eb5195b18750b4, type: 2}
       propertyPath: m_LocalPosition.y
@@ -249,8 +259,8 @@ MonoBehaviour:
   - {fileID: 1000014025063764, guid: 25429b54973882c48bdf410bf8b6298b, type: 2}
   - {fileID: 1000012550492752, guid: 62ca46ef130668d43903a596a71bbeff, type: 2}
   - {fileID: 1000013342997766, guid: 766ec751552c2204f8b0a77922c727b7, type: 2}
-  spawnTime: 2.5
-  speed: 0.075
+  spawnTime: 3
+  speed: 0.1
 --- !u!4 &1340780117
 Transform:
   m_ObjectHideFlags: 0
@@ -258,7 +268,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1340780115}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 25.91, y: 4.12, z: -10}
+  m_LocalPosition: {x: 11.87, y: 4.12, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -371,6 +381,7 @@ MonoBehaviour:
   isMedium: 0
   isHard: 0
   pause: 0
+  debrisSpwn: {fileID: 1340780116}
   waveManager: {fileID: 739257799}
 --- !u!1001 &2020175809
 Prefab:

@@ -18,6 +18,7 @@ public class GameMaster : MonoBehaviour
 
     public bool pause;
 
+    public DebrisSpawn debrisSpwn;
     public Wave_VerII waveManager;
 
     // Use this for initialization
@@ -41,15 +42,14 @@ public class GameMaster : MonoBehaviour
         {
             //Medium
 
-           // print("Medium");
-
             isEasy = false;
-
-
             isMedium = true;
 
-            waveManager.waveHeight = 1.5f;
-            waveManager.frequency = 1f;
+            debrisSpwn.spawnTime = 2f;
+            debrisSpwn.speed = 0.075f;
+
+            waveManager.waveHeight = 1f;
+            waveManager.frequency = 0.75f;
 
         }
         if (difficultyTimer >= hardTime)
@@ -60,8 +60,11 @@ public class GameMaster : MonoBehaviour
             isMedium = false;
             isHard = true;
 
-            waveManager.waveHeight = 2.25f;
-            waveManager.frequency = 1.5f;
+            debrisSpwn.spawnTime = 1f;
+            debrisSpwn.speed = 0.05f;
+
+            waveManager.waveHeight = 1.75f;
+            waveManager.frequency = 1f;
         }
 
         // Increase dificulty

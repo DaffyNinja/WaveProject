@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011920854938}
   - 58: {fileID: 58000011961944418}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010145454010}
   - 58: {fileID: 58000011291210882}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
