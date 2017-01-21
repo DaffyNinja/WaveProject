@@ -1278,7 +1278,7 @@ MonoBehaviour:
   startDelay: 0
   waveHeight: 1
   frequency: 1
-  xpos: 20
+  xpos: 150
   ypos: -2.5
   xspeed: 0
   yspeed: 0
