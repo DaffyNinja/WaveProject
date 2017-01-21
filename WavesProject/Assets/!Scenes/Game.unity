@@ -1026,6 +1026,7 @@ MonoBehaviour:
   - "\u201CSo that\u2019s it! Good for you.\u201D"
   storyTextUI: {fileID: 807432851}
   textTime: 30
+  textStayTime: 7.5
 --- !u!1 &1377574662
 GameObject:
   m_ObjectHideFlags: 0
