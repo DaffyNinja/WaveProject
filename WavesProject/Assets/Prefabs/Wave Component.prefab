@@ -24,7 +24,7 @@ GameObject:
   - 253: {fileID: 253000011453109472}
   m_Layer: 4
   m_Name: Wave Component
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
