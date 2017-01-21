@@ -90,6 +90,34 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &205985099
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 205985100}
+  m_Layer: 0
+  m_Name: Wave Parent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &205985100
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 205985099}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.15, y: 6.26, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
 --- !u!1001 &344246834
 Prefab:
   m_ObjectHideFlags: 0
@@ -160,7 +188,7 @@ GameObject:
   - 50: {fileID: 433610291}
   - 114: {fileID: 433610292}
   m_Layer: 10
-  m_Name: Running_0
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -290,7 +318,7 @@ GameObject:
   - 4: {fileID: 1340780117}
   - 114: {fileID: 1340780116}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Game Master
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -302,13 +330,30 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1340780115}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e4a13f707899ee4694fb00e82a40d40, type: 3}
+  m_Script: {fileID: 11500000, guid: 324c6e95708e98c4ba9e59261bd19239, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debrisObj: []
-  spawnTime: 0
+  easyDebriSpwnTime: 0
+  easyDebriSpeed: 0
+  easyWaveHeight: 0
+  easyWaveFrequency: 0
+  mediumTime: 0
+  isMedium: 0
+  medDebriSpwnTime: 0
+  medDebriSpeed: 0
+  medWaveHeight: 0
+  medWaveFrequency: 0
+  hardTime: 0
+  isHard: 0
+  hardDebriSpwnTime: 0
+  hardDebriSpeed: 0
+  hardWaveHeight: 0
+  hardWaveFrequency: 0
+  pause: 0
+  debrisSpwn: {fileID: 0}
+  waveManager: {fileID: 0}
 --- !u!4 &1340780117
 Transform:
   m_ObjectHideFlags: 0
@@ -421,7 +466,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3ab7a10d1d4f04498521eb31a10153a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 0.75
   startDelay: 0
   waveHeight: 0.75
   frequency: 0.75
@@ -429,7 +473,10 @@ MonoBehaviour:
   ypos: 0
   xspeed: 0
   yspeed: 0
+  generateDistance: 0
+  destroyDistance: 0
   waveSprite: {fileID: 1000013986680110, guid: 3dd25e18c69dc4640beba35e8817390f, type: 2}
+  waveParent: {fileID: 0}
 --- !u!1001 &2020175809
 Prefab:
   m_ObjectHideFlags: 0
