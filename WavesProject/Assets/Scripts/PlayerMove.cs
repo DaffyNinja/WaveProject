@@ -125,6 +125,10 @@ public class PlayerMove : MonoBehaviour
             {
                 rig.AddForce(new Vector2(waterSpeed, 0));
 
+                if (rig.velocity.x > 15f)
+                {
+                    rig.velocity = new Vector2(15f, rig.velocity.y);
+                }
             }
 
 
