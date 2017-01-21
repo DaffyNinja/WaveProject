@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114000012159621732}
-  - {fileID: 114000014270141426}
+  - {fileID: 114000011628628254}
   EditorEvents:
   - {fileID: 114000011356347860}
   - {fileID: 114000011931561172}
@@ -21,9 +21,9 @@ MonoBehaviour:
   - {fileID: 114000012779083246}
   - {fileID: 114000013392057996}
   - {fileID: 114000013906000448}
-  MasterBankRef: {fileID: 114000014270141426}
+  MasterBankRef: {fileID: 114000011628628254}
   StringsBankRef: {fileID: 114000012159621732}
-  stringsBankWriteTime: 636206253653843222
+  stringsBankWriteTime: 636206591630790072
   cacheVersion: 2
 --- !u!114 &114000010231657184
 MonoBehaviour:
@@ -40,6 +40,36 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114000010258904958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: bgmState
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114000010701195140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 2
+  Default: 0
 --- !u!114 &114000011356347860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54,15 +84,15 @@ MonoBehaviour:
   Path: event:/bgm/bgm_MASTER
   guid: 7b43a566c6f75640906b1500d8ba7865
   Banks:
-  - {fileID: 114000014270141426}
-  IsStream: 1
-  Is3D: 1
+  - {fileID: 114000011628628254}
+  IsStream: 0
+  Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114000014073726412}
-  - {fileID: 114000010231657184}
-  MinDistance: 1
-  MaxDistance: 20
+  - {fileID: 114000013261716768}
+  - {fileID: 114000014169208598}
+  MinDistance: 0
+  MaxDistance: 0
 --- !u!114 &114000011531982892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,6 +108,25 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
+--- !u!114 &114000011628628254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: D:\GAMEJAM 2017\WavesProject\FMODAssets\WavesProject_FMOD\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636206591630760071
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 2505088
+  Exists: 1
 --- !u!114 &114000011779978750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,13 +156,13 @@ MonoBehaviour:
   Path: event:/sfx/sfx_UI_Play
   guid: 13c32f58ff82a849b4c8a35bce99ac03
   Banks:
-  - {fileID: 114000014270141426}
+  - {fileID: 114000011628628254}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
+  MinDistance: 0
+  MaxDistance: 0
 --- !u!114 &114000012159621732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,7 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: FMODAssets\WavesProject_FMOD\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636206253653843222
+  lastModified: 636206591630790072
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -165,7 +214,7 @@ MonoBehaviour:
   Path: event:/sfx/sfx_Swimming
   guid: 1bdd048b7584c940afd0ea76eb43550b
   Banks:
-  - {fileID: 114000014270141426}
+  - {fileID: 114000011628628254}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -186,12 +235,12 @@ MonoBehaviour:
   Path: event:/sfx/sfx_Footsteps
   guid: 3987d815e1ff4f46914f73bf09f6b882
   Banks:
-  - {fileID: 114000014270141426}
+  - {fileID: 114000011628628254}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 114000011779978750}
+  - {fileID: 114000013062895226}
   MinDistance: 0
   MaxDistance: 0
 --- !u!114 &114000012810754076
@@ -208,6 +257,21 @@ MonoBehaviour:
   Name: Intensity
   Min: 0
   Max: 2
+  Default: 0
+--- !u!114 &114000013062895226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Surface
+  Min: 0
+  Max: 3
   Default: 0
 --- !u!114 &114000013078360782
 MonoBehaviour:
@@ -249,6 +313,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 3268032
   Exists: 1
+--- !u!114 &114000013261716768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 2
+  Default: 0
 --- !u!114 &114000013392057996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,13 +342,28 @@ MonoBehaviour:
   Path: event:/sfx/sfx_Wave_Ambience
   guid: 807e4d5bf346f2408fe18c17b9ea3d7b
   Banks:
-  - {fileID: 114000014270141426}
-  IsStream: 1
-  Is3D: 1
+  - {fileID: 114000011628628254}
+  IsStream: 0
+  Is3D: 0
   IsOneShot: 0
   Parameters: []
-  MinDistance: 5
-  MaxDistance: 10
+  MinDistance: 0
+  MaxDistance: 0
+--- !u!114 &114000013408624564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Surface
+  Min: 0
+  Max: 3
+  Default: 0
 --- !u!114 &114000013906000448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,7 +378,7 @@ MonoBehaviour:
   Path: event:/sfx_WaterJump
   guid: d1d4eff78d09684e9d424d3df27d4d73
   Banks:
-  - {fileID: 114000014270141426}
+  - {fileID: 114000011628628254}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -320,6 +414,21 @@ MonoBehaviour:
   Name: Intensity
   Min: 0
   Max: 2
+  Default: 0
+--- !u!114 &114000014169208598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: bgmState
+  Min: 0
+  Max: 1
   Default: 0
 --- !u!114 &114000014270141426
 MonoBehaviour:

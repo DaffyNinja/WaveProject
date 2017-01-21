@@ -5,7 +5,7 @@
             <value>bgm_MASTER</value>
         </property>
         <property name="outputFormat">
-            <value>2</value>
+            <value>1</value>
         </property>
         <relationship name="mixer">
             <destination>{9b3a9e21-e532-4e47-88ea-8aa90aec3c56}</destination>
@@ -470,7 +470,6 @@
     <object class="MixerBusEffectChain" id="{788ac9fc-8888-4151-a0fc-066c7023c97a}">
         <relationship name="effects">
             <destination>{b38d6351-ad3f-431f-811c-8aaecbacdd72}</destination>
-            <destination>{6d0d5766-5555-431f-9323-71a89fdc0821}</destination>
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{e8e345a5-aa80-4aad-bb64-ade6cce52a9f}"/>
@@ -644,7 +643,6 @@
         </property>
     </object>
     <object class="MixerBusFader" id="{b38d6351-ad3f-431f-811c-8aaecbacdd72}"/>
-    <object class="SpatialiserEffect" id="{6d0d5766-5555-431f-9323-71a89fdc0821}"/>
     <object class="SFXReverbEffect" id="{c2ccb8ed-0a15-4b0e-baa4-2f045f9a84f9}">
         <property name="wetLevel">
             <value>-80</value>

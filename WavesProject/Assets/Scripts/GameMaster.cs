@@ -37,6 +37,9 @@ public class GameMaster : MonoBehaviour {
 
     float difficultyTimer;
 
+    [FMODUnity.EventRefAttribute]
+    FMOD.Studio.EventInstance musicSfx;
+
     public bool pause;
 
     public DebrisSpawn debrisSpwn;
@@ -51,11 +54,24 @@ public class GameMaster : MonoBehaviour {
 
         isEasy = true;
 
+        musicSfx = FMODUnity.RuntimeManager.CreateInstance("event:/bgm/bgm_MASTER");
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
+
+        FMOD.Studio.PLAYBACK_STATE play_bgm;
+        musicSfx.getPlaybackState(out play_bgm);
+        if (play_bgm != FMOD.Studio.PLAYBACK_STATE.PLAYING)
+        {
+            musicSfx.start();
+        }
+
+
+
         difficultyTimer += Time.deltaTime;
 
         if (difficultyTimer < easyTime) //Easy

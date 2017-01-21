@@ -5,7 +5,7 @@
             <value>sfx_UI_Play</value>
         </property>
         <property name="outputFormat">
-            <value>2</value>
+            <value>1</value>
         </property>
         <relationship name="mixer">
             <destination>{8068456f-67ea-4271-9bfd-6ef54bb299d8}</destination>
@@ -148,7 +148,6 @@
     <object class="MixerBusEffectChain" id="{62e1772f-f556-4d4f-b39d-ef7a82168e19}">
         <relationship name="effects">
             <destination>{4882a09f-bf80-43b0-8ad4-d73aad409298}</destination>
-            <destination>{31a46e84-d62d-46ea-aa4f-ddb826e208de}</destination>
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{58827d4a-3bef-40f2-8305-4957c793d0d4}"/>
@@ -180,7 +179,6 @@
         </property>
     </object>
     <object class="MixerBusFader" id="{4882a09f-bf80-43b0-8ad4-d73aad409298}"/>
-    <object class="SpatialiserEffect" id="{31a46e84-d62d-46ea-aa4f-ddb826e208de}"/>
     <object class="SFXReverbEffect" id="{17c23fa8-c405-4500-a9ba-0ca1004a888b}">
         <property name="wetLevel">
             <value>-1</value>
