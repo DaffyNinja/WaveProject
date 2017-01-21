@@ -31,6 +31,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1000012822366444
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000010709982064}
+  - 58: {fileID: 58000014073275464}
+  m_Layer: 10
+  m_Name: Feet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &4000010060643622
 Transform:
   m_ObjectHideFlags: 1
@@ -41,8 +57,22 @@ Transform:
   m_LocalPosition: {x: 839, y: 0.89, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
+  m_Children:
+  - {fileID: 4000010709982064}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!4 &4000010709982064
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012822366444}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -3.29, z: 0}
+  m_LocalScale: {x: 2.6180277, y: 2.6180272, z: 2.6180272}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000010060643622}
   m_RootOrder: 0
 --- !u!50 &50000012866047344
 Rigidbody2D:
@@ -61,6 +91,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!58 &58000014073275464
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012822366444}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!61 &61000010759376652
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -72,9 +116,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.68}
   serializedVersion: 2
-  m_Size: {x: 6.0299997, y: 8.22}
+  m_Size: {x: 2.37, y: 5.54}
 --- !u!95 &95000011432328416
 Animator:
   serializedVersion: 3
@@ -106,14 +150,14 @@ MonoBehaviour:
   landSpeed: 25
   onLand: 0
   jumpForce: 125
-  groundCheck: 1
+  groundCheck: 1.25
   grounded: 0
   airMoveSpeed: 5
   waterSpeed: 15
   inWater: 0
-  waterJumpForce: 15
-  diveForce: 750
-  diveSpeed: 0
+  waterJumpForce: 20
+  diveForce: 50
+  diveSpeed: 50
   inSea: 0
 --- !u!212 &212000010454724134
 SpriteRenderer:

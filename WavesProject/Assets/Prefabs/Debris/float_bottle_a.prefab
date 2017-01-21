@@ -22,7 +22,7 @@ GameObject:
   - 212: {fileID: 212000012262693540}
   - 61: {fileID: 61000011219675624}
   - 50: {fileID: 50000010777852356}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: float_bottle_a
   m_TagString: Untagged
   m_Icon: {fileID: 0}

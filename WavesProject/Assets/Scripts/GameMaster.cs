@@ -6,14 +6,16 @@ public class GameMaster : MonoBehaviour {
 
     [Header("Dificulty")]
     [Header("Easy")]
+    public bool isEasy;
+    public float easyTime;
+
     public float easyDebriSpwnTime;
     public float easyDebriSpeed;
 
     public float easyWaveHeight;
     public float easyWaveFrequency;
 
-    float easyTime;
-    bool isEasy;
+
     [Header("Medium")]
     public float mediumTime;
     public bool isMedium;
@@ -58,6 +60,7 @@ public class GameMaster : MonoBehaviour {
 
         if (difficultyTimer < easyTime) //Easy
         {
+            isEasy = true; 
 
             debrisSpwn.spawnTime = easyDebriSpwnTime;
             debrisSpwn.speed = easyDebriSpeed;
