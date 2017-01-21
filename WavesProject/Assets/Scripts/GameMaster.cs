@@ -63,12 +63,12 @@ public class GameMaster : MonoBehaviour {
     {
 
 
-        FMOD.Studio.PLAYBACK_STATE play_bgm;
-        musicSfx.getPlaybackState(out play_bgm);
-        if (play_bgm != FMOD.Studio.PLAYBACK_STATE.PLAYING)
-        {
-            musicSfx.start();
-        }
+        //FMOD.Studio.PLAYBACK_STATE play_bgm;
+        //musicSfx.getPlaybackState(out play_bgm);
+        //if (play_bgm != FMOD.Studio.PLAYBACK_STATE.PLAYING)
+        //{
+        //    musicSfx.start();
+        //}
 
 
 
@@ -134,16 +134,22 @@ public class GameMaster : MonoBehaviour {
 
     public void PlayAgainButton()
     {
+
+        FMODUnity.RuntimeManager.PlayOneShot("event:/sfx/sfx_UI_Play", transform.position);
         SceneManager.LoadScene(1);
     }
 
     public void MainMenuButton()
     {
+
+        FMODUnity.RuntimeManager.PlayOneShot("event:/sfx/sfx_UI_Play", transform.position);
         SceneManager.LoadScene(0);
     }
 
     public void QuitButton()
     {
+
+        FMODUnity.RuntimeManager.PlayOneShot("event:/sfx/sfx_UI_Play", transform.position);       
         Application.Quit();
     }
 }
