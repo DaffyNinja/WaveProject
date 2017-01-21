@@ -19,7 +19,7 @@ MonoBehaviour:
   - {fileID: 114000013078360782}
   MasterBankRef: {fileID: 114000010151903734}
   StringsBankRef: {fileID: 114000012159621732}
-  stringsBankWriteTime: 636205978547909507
+  stringsBankWriteTime: 636205987915187580
   cacheVersion: 2
 --- !u!114 &114000010151903734
 MonoBehaviour:
@@ -34,7 +34,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: C:\Users\holiday\Documents\GitHub\WaveProject\WavesProject\FMODAssets\WavesProject_FMOD\Build\Desktop\Master
     Bank.bank
-  lastModified: 636205978547899507
+  lastModified: 636205987915177580
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -73,7 +73,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: FMODAssets\WavesProject_FMOD\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636205978547909507
+  lastModified: 636205987915187580
   LoadResult: 0
   FileSizes:
   - Name: Desktop

@@ -5,11 +5,12 @@ using System.Collections;
 public class Wave_VerII : MonoBehaviour {
 
     [Header("Wave Values")]
-    public float width;
+   
     //public int density;
     public float startDelay;
     public float waveHeight;
     public float frequency;
+    float width = 0.5f;
 
     [Space(10)]
     public float xpos;

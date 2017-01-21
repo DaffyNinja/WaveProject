@@ -7,15 +7,16 @@ public class PlayerMove : MonoBehaviour {
     public float landSpeed;
     public bool onLand;
 
-    [Header("Jump")]
-    public float jumpForce;
+    public float landJumpForce;
 
+    [Space(5)]
     public float groundCheck;
     public bool grounded;
 
 
     [Header("Water")]
     public float waterSpeed;
+    public float waterJumpForce;
     public bool inWater;
 
     public float diveForce;
@@ -97,12 +98,17 @@ public class PlayerMove : MonoBehaviour {
 
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && grounded || Input.GetKeyDown(KeyCode.W) && grounded || Input.GetKeyDown(KeyCode.UpArrow) && grounded || Input.GetKeyDown(KeyCode.W) && inWater)
+        if (Input.GetKeyDown(KeyCode.Space) && grounded || Input.GetKeyDown(KeyCode.W) && grounded || Input.GetKeyDown(KeyCode.UpArrow) && grounded)
         {
-            rig.AddForce(new Vector2(0, jumpForce));
+            rig.AddForce(new Vector2(0, landJumpForce));
 
-            transform.localEulerAngles = new Vector3(0, 0, 0);
-         //   rig.constraints = RigidbodyConstraints2D.FreezeRotation;
+            //transform.localEulerAngles = new Vector3(0, 0, 0);
+            //   rig.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
+        else if (Input.GetKeyDown(KeyCode.W) && inWater || Input.GetKeyDown(KeyCode.UpArrow) && inWater || Input.GetKeyDown(KeyCode.Space) && inWater)
+        {
+            rig.AddForce(new Vector2(0, waterJumpForce));
+
         }
 
     }
