@@ -567,7 +567,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 755179805}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.27, y: 7.43, z: 0}
+  m_LocalPosition: {x: 848.21, y: 4.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -579,7 +579,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 755179805}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d21815bd4d71a254595d3e896dab88de, type: 3}
   m_Name: 
@@ -593,10 +593,14 @@ MonoBehaviour:
   - {fileID: 1000013578186472, guid: aace27ea4d7c3ba43907aac767794836, type: 2}
   - {fileID: 1000014175029322, guid: 2f1f12beaae636c47b1371addae502e0, type: 2}
   - {fileID: 1000013598473290, guid: c288a6974b42e0143983cdd60589b199, type: 2}
-  spawnTime: 0
-  speed: 0
+  - {fileID: 1000013286389122, guid: b7f1d7c09eb93d34194efa2b1484618a, type: 2}
+  - {fileID: 1000010805808918, guid: 0c40837c76ca0ce498642632df295170, type: 2}
+  - {fileID: 1000010993871250, guid: 103116f720fbfbe4b9f8caeec383a017, type: 2}
+  - {fileID: 1000010781843648, guid: 3958254204231d8418f292d6eb52e95a, type: 2}
+  spawnTime: 0.1
+  speed: 3
   debrisParent: {fileID: 463386177}
-  destroyDistance: 0
+  destroyDistance: 25
 --- !u!1 &924607250
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,22 +822,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 324c6e95708e98c4ba9e59261bd19239, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  easyDebriSpwnTime: 0
-  easyDebriSpeed: 0
-  easyWaveHeight: 0
-  easyWaveFrequency: 0
-  mediumTime: 0
+  easyDebriSpwnTime: 2
+  easyDebriSpeed: 0.075
+  easyWaveHeight: 5
+  easyWaveFrequency: 3
+  mediumTime: 15
   isMedium: 0
-  medDebriSpwnTime: 0
-  medDebriSpeed: 0
-  medWaveHeight: 0
-  medWaveFrequency: 0
-  hardTime: 0
+  medDebriSpwnTime: 1.5
+  medDebriSpeed: 0.05
+  medWaveHeight: 10
+  medWaveFrequency: 6
+  hardTime: 35
   isHard: 0
-  hardDebriSpwnTime: 0
-  hardDebriSpeed: 0
-  hardWaveHeight: 0
-  hardWaveFrequency: 0
+  hardDebriSpwnTime: 1
+  hardDebriSpeed: 0.025
+  hardWaveHeight: 15
+  hardWaveFrequency: 9
   pause: 0
   debrisSpwn: {fileID: 755179807}
   waveManager: {fileID: 1696568055}
@@ -1272,14 +1276,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startDelay: 0
-  waveHeight: 0.75
-  frequency: 0.75
-  xpos: 0
+  waveHeight: 1
+  frequency: 1
+  xpos: 20
   ypos: -2.5
   xspeed: 0
   yspeed: 0
-  generateDistance: 0
-  destroyDistance: 0
+  generateDistance: 5
+  destroyDistance: 75
   waveSprite: {fileID: 1000013986680110, guid: 3dd25e18c69dc4640beba35e8817390f, type: 2}
   waveParent: {fileID: 205985100}
 --- !u!114 &1696568056
