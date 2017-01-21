@@ -55,6 +55,7 @@ public class PlayerMove : MonoBehaviour {
         if (onLand)
         {
             animate.SetBool("InWaterAn", false);
+            animate.SetBool("onGround", true);
 
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
@@ -71,6 +72,7 @@ public class PlayerMove : MonoBehaviour {
             // print("Water");
 
             animate.SetBool("InWaterAn", true);
+            animate.SetBool("onGround", false);
 
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
@@ -95,11 +97,16 @@ public class PlayerMove : MonoBehaviour {
                 //GetComponent<Collider2D>().enabled = false;
             }
 
-            if(timer > 1)
+            if (timer > 1)
             {
                 rig.AddForce(new Vector2(0, -diveForce * ((timer - 1) / 1f)));
             }
             timer -= Time.deltaTime;
+
+        }
+        else
+        {
+            animate.SetBool("InWaterAn", false);
 
         }
 
@@ -107,6 +114,8 @@ public class PlayerMove : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space) && grounded || Input.GetKeyDown(KeyCode.W) && grounded || Input.GetKeyDown(KeyCode.UpArrow) && grounded || Input.GetKeyDown(KeyCode.W) && inWater)
         {
             rig.AddForce(new Vector2(0, jumpForce));
+
+            animate.SetBool("jumpAni", true);
 
             transform.localEulerAngles = new Vector3(0, 0, 0);
          //   rig.constraints = RigidbodyConstraints2D.FreezeRotation;
