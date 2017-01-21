@@ -228,7 +228,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Chris Ramirez - Game Designer \r\n\r\nJanette Sacdalan - Game Designer\r\n\r\nMarcus
     Day - Programmer\r\n\r\nDavid Wang - Programmer\r\n\r\nOliver Lardner - Artist\r\n\r\nIan
-    Cheng - Artist"
+    Cheng - Artist\n\nBrad Gentle - Audio\n"
 --- !u!222 &189934041
 CanvasRenderer:
   m_ObjectHideFlags: 0

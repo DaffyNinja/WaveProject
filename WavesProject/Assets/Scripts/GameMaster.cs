@@ -112,4 +112,14 @@ public class GameMaster : MonoBehaviour {
         }
 
     }
+
+    public void PlayAgainButton()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void MainMenuButton()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
