@@ -43,12 +43,13 @@ public class CameraMoveII : MonoBehaviour {
         {
             ggPanel.SetActive(true);
 
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
         }
         else
         {
             ggPanel.SetActive(false);
 
+            //Time.timeScale = 0;
         }
 	
 	}
