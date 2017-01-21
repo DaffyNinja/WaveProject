@@ -8,6 +8,8 @@ public class DebrisSpawn : MonoBehaviour {
     [Space(10)]
     public float spawnTime;
     float timer;
+    [Space(5)]
+    public float speed;
 
     bool spawn;
     bool create;
@@ -22,6 +24,8 @@ public class DebrisSpawn : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        transform.Translate(speed, 0, 0);
+
         if (spawn == true)
         {
             timer += Time.deltaTime;
@@ -38,7 +42,7 @@ public class DebrisSpawn : MonoBehaviour {
 
             if (create == true)
             {
-                Instantiate(debrisObj[Random.Range(0, debrisObj.Count)], transform.position, Quaternion.identity);
+                Instantiate(debrisObj[Random.Range(0, debrisObj.Count)], new Vector3(transform.position.x,transform.position.y,1), Quaternion.identity);
                 create = false;
             }
 
