@@ -19,7 +19,8 @@ public class Wave_VerII : MonoBehaviour {
     public float yspeed;
 
     int density = 1;
-    int size = 100; // Number of vertices
+    int particles;
+    int size = 200; // Number of vertices
     //static float velocityDamping = 1f; // Proprotional velocity damping, must be less than or equal to 1.
     static float timeScale = 50f;
 
@@ -47,6 +48,7 @@ public class Wave_VerII : MonoBehaviour {
     void Start()
     {
         size = size * density;
+        particles = size;
 
         newHeight = new float[size * 4];
         velocity = new float[size * 4];
@@ -57,7 +59,7 @@ public class Wave_VerII : MonoBehaviour {
         for (int i = 0; i < size; i++)
         {
             vertex[i] = Instantiate(waveSprite);
-            vertex[i].transform.position = new Vector2(((float)i - size / 2) * width/ 2 + xpos, 0 + ypos);
+            vertex[i].transform.position = new Vector2(((float)i - (float)particles / 2f) * width / 1f + xpos, 0 + ypos);
         }
         totalLength = vertex[size - 1].transform.position.x - vertex[0].transform.position.x;
     }
@@ -70,15 +72,31 @@ public class Wave_VerII : MonoBehaviour {
         time += Time.deltaTime;
 
         //generate new waves
-        if(vertex[size-1].transform.position.x < 15f)
+        if(vertex[size-1].transform.position.x < 80f)
         {
-            for (int i = size; i < size + size; i++)
+            float j = 200;
+            for (int i = size; i < size + particles; i++)
             {
                 vertex[i] = Instantiate(waveSprite);
-                vertex[i].transform.position = new Vector2(((float)i - size / 2f) * width / 2f + xpos - 3.4f, 0 + ypos);
+                vertex[i].transform.position = new Vector2(( (float)j - (float)particles / 2f) * width / 1f + xpos -4.5f, 0 + ypos);
+                j += 1f;
             }
-            size += size;
+            size += particles;
         }
+        //delete old waves
+        if (vertex[particles - 1].transform.position.x < -10f)
+        {
+            for (int i = 0; i < particles; i++)
+            {
+                Destroy(vertex[i]);
+            }
+            for(int i = 0; i < particles; i++)
+            {
+                vertex[i] = vertex[i + particles];
+            }
+            size -= particles;
+        }
+
 
         for (int i = 1; i <= size - 1; i++)
         {
