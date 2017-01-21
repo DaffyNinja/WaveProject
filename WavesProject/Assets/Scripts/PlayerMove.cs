@@ -22,7 +22,9 @@ public class PlayerMove : MonoBehaviour
 
     public float waterJumpForce;
 
+    [Header("Dive")]
     public float diveForce;
+    public float diveSpeed;
     public bool inSea;
     bool goDive;
 
@@ -127,9 +129,40 @@ public class PlayerMove : MonoBehaviour
             if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
             {
 
-                rig.AddForce(new Vector2(0, -diveForce));
+                float diveTimer = 0;
 
-                //GetComponent<Collider2D>().enabled = false;
+                diveTimer += Time.deltaTime;
+
+                if (diveTimer >= 3)
+                {
+                    inSea = false;
+                }
+                else
+                {
+                    inSea = true;
+                }
+
+                if (inSea == true)
+                {
+                    rig.AddForce(new Vector2(0, -diveForce));
+
+
+                    if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+                    {
+                        rig.AddForce(new Vector2(-diveSpeed, 0));
+
+                    }
+                    else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+                    {
+                        rig.AddForce(new Vector2(diveSpeed, 0));
+                    }
+
+                }
+                else
+                {
+                    rig.AddForce(new Vector2(0, diveForce * 2));
+                }
+                
             }
 
         }

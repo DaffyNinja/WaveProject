@@ -25,7 +25,7 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 3
-  m_SkyboxMaterial: {fileID: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 1fa62e52424a0224ca035ec893e10fab, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -881,7 +881,7 @@ MonoBehaviour:
   hardWaveFrequency: 9
   pause: 0
   debrisSpwn: {fileID: 755179807}
-  waveManager: {fileID: 1696568055}
+  waveManager: {fileID: 0}
 --- !u!4 &1340780117
 Transform:
   m_ObjectHideFlags: 0
@@ -909,8 +909,8 @@ MonoBehaviour:
   terrainPieces:
   - {fileID: 1000014105753818, guid: 74300d20ce176794d8eb40f9d6d0a245, type: 2}
   - {fileID: 1000012496565392, guid: c6bb4e0bf4ef93548a5442b0aba14ddd, type: 2}
-  terrainDis: 20
-  destroyNum: 15
+  terrainDis: 22.5
+  destroyNum: 25
   yDis: 5.5
   playerTrans: {fileID: 433610289}
 --- !u!1 &1377574662
@@ -1245,7 +1245,7 @@ GameObject:
   - 92: {fileID: 1696568052}
   - 124: {fileID: 1696568051}
   - 81: {fileID: 1696568050}
-  - 114: {fileID: 1696568055}
+  - 114: {fileID: 1696568058}
   - 114: {fileID: 1696568056}
   - 114: {fileID: 1696568057}
   m_Layer: 0
@@ -1323,28 +1323,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &1696568055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1696568049}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3ab7a10d1d4f04498521eb31a10153a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startDelay: 0
-  waveHeight: 1
-  frequency: 1
-  xpos: 50
-  ypos: -2.5
-  xspeed: 0
-  yspeed: 0
-  generateDistance: 0
-  destroyDistance: 0
-  waveSprite: {fileID: 1000013986680110, guid: 3dd25e18c69dc4640beba35e8817390f, type: 2}
-  waveParent: {fileID: 205985100}
 --- !u!114 &1696568056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1373,6 +1351,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ListenerNumber: 0
+--- !u!114 &1696568058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1696568049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfc7a84a50424d6468bad9168f4c27b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startDelay: 0
+  waveHeight: 1
+  frequency: 1
+  xpos: 50
+  ypos: -3.5
+  xspeed: 0
+  yspeed: 0
+  generateDistance: 0
+  destroyDistance: 0
+  waveSprite: {fileID: 1000013986680110, guid: 3dd25e18c69dc4640beba35e8817390f, type: 2}
+  waveParent: {fileID: 205985100}
 --- !u!1001 &1904618295
 Prefab:
   m_ObjectHideFlags: 0
@@ -1382,7 +1382,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000011965692766, guid: 74300d20ce176794d8eb40f9d6d0a245, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 828.7421
+      value: 842.81
       objectReference: {fileID: 0}
     - target: {fileID: 4000011965692766, guid: 74300d20ce176794d8eb40f9d6d0a245, type: 2}
       propertyPath: m_LocalPosition.y
