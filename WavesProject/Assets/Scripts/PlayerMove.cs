@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using FMOD.Studio;
 
-public class PlayerMove : MonoBehaviour {
+public class PlayerMove : MonoBehaviour
+{
 
     [Header("Land")]
     public float landSpeed;
@@ -12,7 +14,6 @@ public class PlayerMove : MonoBehaviour {
 
     public float groundCheck;
     public bool grounded;
-
 
     [Header("Water")]
     public float waterSpeed;
@@ -29,6 +30,11 @@ public class PlayerMove : MonoBehaviour {
     Rigidbody2D rig;
     Animator animate;
 
+    [FMODUnity.EventRefAttribute]
+    FMOD.Studio.EventInstance waterSFX;
+    FMOD.Studio.EventInstance footstepsSFX;
+    FMOD.Studio.ParameterInstance musicEndParam;
+
 
     // Use this for initialization
     void Awake()
@@ -36,6 +42,14 @@ public class PlayerMove : MonoBehaviour {
         animate = GetComponent<Animator>();
 
         rig = GetComponent<Rigidbody2D>();
+
+        waterSFX = FMODUnity.RuntimeManager.CreateInstance("event:/sfx/sfx_Swimming");
+        waterSFX.getParameter("end", out musicEndParam);
+
+        footstepsSFX = FMODUnity.RuntimeManager.CreateInstance("event:/sfx/sfx_Footsteps");
+        footstepsSFX.getParameter("end", out musicEndParam);
+
+
 
     }
 
@@ -49,13 +63,26 @@ public class PlayerMove : MonoBehaviour {
         if (grounded)
         {
             onLand = true;
-           // rig.constraints = RigidbodyConstraints2D.None;
+            // rig.constraints = RigidbodyConstraints2D.None;
+        }
+        else
+        {
+            onLand = false;
         }
 
         if (onLand)
         {
             animate.SetBool("InWaterAn", false);
             animate.SetBool("onGround", true);
+
+            FMOD.Studio.PLAYBACK_STATE play_Foot;
+            footstepsSFX.getPlaybackState(out play_Foot);
+            if (play_Foot != FMOD.Studio.PLAYBACK_STATE.PLAYING)
+            {
+                footstepsSFX.start();
+            }
+
+
 
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
@@ -73,6 +100,13 @@ public class PlayerMove : MonoBehaviour {
 
             animate.SetBool("InWaterAn", true);
             animate.SetBool("onGround", false);
+
+            FMOD.Studio.PLAYBACK_STATE play_Water;
+            waterSFX.getPlaybackState(out play_Water);
+            if (play_Water != FMOD.Studio.PLAYBACK_STATE.PLAYING)
+            {
+                waterSFX.start();
+            }
 
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
@@ -104,9 +138,13 @@ public class PlayerMove : MonoBehaviour {
             timer -= Time.deltaTime;
 
         }
-        else
+        else if (inWater == false && onLand == false)
         {
             animate.SetBool("InWaterAn", false);
+
+            waterSFX.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+
+            footstepsSFX.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
 
         }
 
@@ -118,9 +156,9 @@ public class PlayerMove : MonoBehaviour {
             animate.SetBool("jumpAni", true);
 
             transform.localEulerAngles = new Vector3(0, 0, 0);
-         //   rig.constraints = RigidbodyConstraints2D.FreezeRotation;
+            //   rig.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
 
     }
-        
+
 }

@@ -23,13 +23,97 @@
 [LOG] Thread::initThread                       : Initializing FMOD Studio bank load thread.  priority 0
 [LOG] Thread::initThread                       : - Stacksize 65536.  Stack pointer 0000000000000000 : usesemaphore = 0 : sleeptime = 1
 [LOG] Thread::callback                         : * FMOD Studio bank load thread started
-[LOG] Manager::readBank                        : fileversion = 80, compatVersion = 70 (oldest = 44, newest = 80)
-[LOG] Manager::readBank                        : fileversion = 80, compatVersion = 70 (oldest = 44, newest = 80)
-[LOG] Manager::readBank                        : fileversion = 80, compatVersion = 70 (oldest = 44, newest = 80)
-[LOG] Manager::readBank                        : fileversion = 80, compatVersion = 70 (oldest = 44, newest = 80)
-[LOG] Manager::readBank                        : fileversion = 80, compatVersion = 70 (oldest = 44, newest = 80)
-[LOG] Manager::readBank                        : fileversion = 80, compatVersion = 70 (oldest = 44, newest = 80)
-[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SoundI::release                          :  (00000000379A6708)
+[LOG] SoundI::release                          : release subsounds. (00000000379A6708)
+[LOG] SoundI::release                          :     sfx_Footsteps_Metal_Marker 01 (00000000385BD968)
+[LOG] SoundI::release                          : release codec. (00000000379A6708)
+[LOG] SoundI::release                          :  (00000000379A6148)
+[LOG] SoundI::release                          : release subsounds. (00000000379A6148)
+[LOG] SoundI::release                          :     sfx_Footsteps_Metal_Marker 02 (00000000385BD648)
+[LOG] SoundI::release                          : release codec. (00000000379A6148)
+[LOG] SoundI::release                          :  (00000000379A5E68)
+[LOG] SoundI::release                          : release subsounds. (00000000379A5E68)
+[LOG] SoundI::release                          :     sfx_Footsteps_Metal_Marker 03 (00000000385BD008)
+[LOG] SoundI::release                          : release codec. (00000000379A5E68)
+[LOG] SoundI::release                          :  (00000000378B0A68)
+[LOG] SoundI::release                          : release subsounds. (00000000378B0A68)
+[LOG] SoundI::release                          :     sfx_Footsteps_Metal_Marker 04 (00000000267A7F98)
+[LOG] SoundI::release                          : release codec. (00000000378B0A68)
+[LOG] SoundI::release                          :  (00000000378B08F8)
+[LOG] SoundI::release                          : release subsounds. (00000000378B08F8)
+[LOG] SoundI::release                          :     sfx__Footsteps _ Wood_ (00000000267A85D8)
+[LOG] SoundI::release                          : release codec. (00000000378B08F8)
+[LOG] SoundI::release                          :  (00000000378B0EB8)
+[LOG] SoundI::release                          : release subsounds. (00000000378B0EB8)
+[LOG] SoundI::release                          :     sfx__Footsteps _ Wood_1 (0000000037F55D38)
+[LOG] SoundI::release                          : release codec. (00000000378B0EB8)
+[LOG] SoundI::release                          :  (00000000378B1308)
+[LOG] SoundI::release                          : release subsounds. (00000000378B1308)
+[LOG] SoundI::release                          :     sfx__Footsteps _ Wood_2 (0000000026A96918)
+[LOG] SoundI::release                          : release codec. (00000000378B1308)
+[LOG] SoundI::release                          :  (00000000379A62B8)
+[LOG] SoundI::release                          : release subsounds. (00000000379A62B8)
+[LOG] SoundI::release                          :     sfx__Footsteps _ Wood_3 (00000000385BDAF8)
+[LOG] SoundI::release                          : release codec. (00000000379A62B8)
+[LOG] SoundI::release                          :  (00000000378B0D48)
+[LOG] SoundI::release                          : release subsounds. (00000000378B0D48)
+[LOG] SoundI::release                          :     sfx__Footsteps _ Wood_4 (0000000037F55568)
+[LOG] SoundI::release                          : release codec. (00000000378B0D48)
+[LOG] SoundI::release                          :  (00000000378B0BD8)
+[LOG] SoundI::release                          : release subsounds. (00000000378B0BD8)
+[LOG] SoundI::release                          :     sfx_Footsteps_Snow_01 (0000000037F55A18)
+[LOG] SoundI::release                          : release codec. (00000000378B0BD8)
+[LOG] SoundI::release                          :  (00000000379A5FD8)
+[LOG] SoundI::release                          : release subsounds. (00000000379A5FD8)
+[LOG] SoundI::release                          :     sfx_Footsteps_Snow_02 (00000000385BD4B8)
+[LOG] SoundI::release                          : release codec. (00000000379A5FD8)
+[LOG] SoundI::release                          :  (00000000378B1198)
+[LOG] SoundI::release                          : release subsounds. (00000000378B1198)
+[LOG] SoundI::release                          :     sfx_Footsteps_Snow_03 (0000000026A96788)
+[LOG] SoundI::release                          : release codec. (00000000378B1198)
+[LOG] SoundI::release                          :  (00000000378B0788)
+[LOG] SoundI::release                          : release subsounds. (00000000378B0788)
+[LOG] SoundI::release                          :     sfx_Footsteps_Snow_04 (00000000267A88F8)
+[LOG] SoundI::release                          : release codec. (00000000378B0788)
+[LOG] SoundI::release                          :  (00000000379A6428)
+[LOG] SoundI::release                          : release subsounds. (00000000379A6428)
+[LOG] SoundI::release                          :     sfx_Splash1 (00000000385BD198)
+[LOG] SoundI::release                          : release codec. (00000000379A6428)
+[LOG] SoundI::release                          :  (00000000378B0618)
+[LOG] SoundI::release                          : release subsounds. (00000000378B0618)
+[LOG] SoundI::release                          :     sfx_Splash2 (00000000267A82B8)
+[LOG] SoundI::release                          : release codec. (00000000378B0618)
+[LOG] SoundI::release                          :  (00000000378B1028)
+[LOG] SoundI::release                          : release subsounds. (00000000378B1028)
+[LOG] SoundI::release                          :     sfx_Splash3 (0000000037F55EC8)
+[LOG] SoundI::release                          : release codec. (00000000378B1028)
+[LOG] SoundI::release                          :  (00000000379A6598)
+[LOG] SoundI::release                          : release subsounds. (00000000379A6598)
+[LOG] SoundI::release                          :     sfx_Swimming (00000000385BD7D8)
+[LOG] SoundI::release                          : release codec. (00000000379A6598)
+[LOG] Thread::callback                         : * FMOD Studio update thread finished
+[LOG] Thread::close                            : FMOD Studio update thread thread destroyed
+[LOG] Thread::callback                         : * FMOD Studio bank load thread finished
+[LOG] Thread::close                            : FMOD Studio bank load thread thread destroyed
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : * FMOD Studio sample load thread finished
+[LOG] Thread::close                            : FMOD Studio sample load thread thread destroyed
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] SystemI::close                           : 
+[LOG] SystemI::close                           : Stop all sounds
+[LOG] Thread::callback                         : * FMOD stream thread finished
+[LOG] Thread::close                            : FMOD stream thread thread destroyed
+[LOG] SystemI::close                           : Stream thread destroyed
+[LOG] Thread::callback                         : * FMOD mixer thread finished
+[LOG] Thread::close                            : FMOD mixer thread thread destroyed
+[LOG] SystemI::close                           : Free master channel group.
+[LOG] SystemI::close                           : Remove 'master' sound group.
+[LOG] SystemI::close                           : Free software output.
+[LOG] SystemI::close                           : Free emulated output.
+[LOG] SystemI::close                           : Free channel pool.
+[LOG] SystemI::close                           : done.
+
 [LOG] Thread::callback                         : * FMOD Studio bank load thread finished
 [LOG] Thread::close                            : FMOD Studio bank load thread thread destroyed
 [LOG] Thread::callback                         : * FMOD Studio sample load thread finished
@@ -50,3 +134,4 @@
 [LOG] SystemI::close                           : Free channel pool.
 [LOG] SystemI::close                           : done.
 
+[LOG] System::create                           : Header version = 1.08.15. Current version = 1.08.15.
