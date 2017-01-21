@@ -9,6 +9,10 @@ public class CameraMoveII : MonoBehaviour {
     public float rightScreenDis;
     Vector3 pos;
 
+    [Space(5)]
+    public float xDis;
+    public float lerpSpeed;
+
     public GameObject ggPanel;
     public bool gameOver;
 
@@ -22,10 +26,6 @@ public class CameraMoveII : MonoBehaviour {
     {
 
       //  pos = Camera.main.WorldToViewportPoint(playerTrans.position);
-
-       
-
-	
 	}
 	
 	// Update is called once per frame
@@ -40,11 +40,11 @@ public class CameraMoveII : MonoBehaviour {
             gameOver = true;
             transform.Translate(0, 0, 0);
         }
-        else if (pos.x > 1f - rightScreenDis)
+        else if (pos.x > 1f - rightScreenDis)  // Right screen
         {
-            transform.Translate(speed * speedIncrease, 0, 0);
+            //transform.Translate(speed * speedIncrease, 0, 0);
 
-            //transform.position = new Vector3(playerTrans.position.x + 5f, transform.position.y, transform.position.z);
+            transform.position = Vector3.Lerp(new Vector3(playerTrans.position.x + xDis, transform.position.y, transform.position.z),new Vector3(transform.position.x,transform.position.y,transform.position.z),lerpSpeed);
         }
         else
         {

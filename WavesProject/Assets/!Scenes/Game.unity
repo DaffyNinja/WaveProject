@@ -951,19 +951,23 @@ MonoBehaviour:
   easyDebriSpeed: 0.15
   easyWaveHeight: 0.5
   easyWaveFrequency: 0.75
+  easyCameraSpeed: 0.05
   mediumTime: 15
   isMedium: 0
   medDebriSpwnTime: 1
   medDebriSpeed: 0.04
   medWaveHeight: 0.75
   medWaveFrequency: 1
+  mediumCameraSpeed: 0.1
   hardTime: 35
   isHard: 0
   hardDebriSpwnTime: 0.75
   hardDebriSpeed: 0.05
   hardWaveHeight: 1
   hardWaveFrequency: 1.25
+  hardCameraSpeed: 0.015
   pause: 0
+  camMove: {fileID: 1696568056}
   debrisSpwn: {fileID: 755179807}
   waveManager: {fileID: 1696568055}
 --- !u!224 &1340780117
@@ -1474,6 +1478,8 @@ MonoBehaviour:
   speedIncrease: 300
   screenDeathDis: -0.075
   rightScreenDis: 0.15
+  xDis: 11.5
+  lerpSpeed: 0.1
   ggPanel: {fileID: 924607250}
   gameOver: 0
   playerTrans: {fileID: 433610289}
