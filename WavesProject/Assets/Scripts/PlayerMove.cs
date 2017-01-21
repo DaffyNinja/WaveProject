@@ -105,7 +105,7 @@ public class PlayerMove : MonoBehaviour {
             //transform.localEulerAngles = new Vector3(0, 0, 0);
             //   rig.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
-        else if (Input.GetKeyDown(KeyCode.W) && inWater || Input.GetKeyDown(KeyCode.UpArrow) && inWater || Input.GetKeyDown(KeyCode.Space) && inWater)
+        else if (Input.GetKey(KeyCode.W) && inWater || Input.GetKey(KeyCode.UpArrow) && inWater || Input.GetKey(KeyCode.Space) && inWater)
         {
             rig.AddForce(new Vector2(0, waterJumpForce));
 

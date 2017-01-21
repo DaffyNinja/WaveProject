@@ -90,23 +90,6 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &31407113 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000013617549812, guid: 632a919451a9c734e9eb5195b18750b4,
-    type: 2}
-  m_PrefabInternal: {fileID: 739257798}
---- !u!114 &31407114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 31407113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f36e0124a1b0de44e88dca9a15a33305, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.075
 --- !u!1 &257034920
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,31 +157,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114000011965359940, guid: c344c854ae81b954bb94f28b4d3209b4,
-        type: 2}
-      propertyPath: waterSpeed
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000011965359940, guid: c344c854ae81b954bb94f28b4d3209b4,
-        type: 2}
-      propertyPath: inWater
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000011965359940, guid: c344c854ae81b954bb94f28b4d3209b4,
-        type: 2}
-      propertyPath: jumpForce
-      value: 550
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000011965359940, guid: c344c854ae81b954bb94f28b4d3209b4,
-        type: 2}
-      propertyPath: waterJumpForce
-      value: 125
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000011965359940, guid: c344c854ae81b954bb94f28b4d3209b4,
-        type: 2}
-      propertyPath: diveForce
-      value: 150
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c344c854ae81b954bb94f28b4d3209b4, type: 2}
   m_IsPrefabParent: 0
@@ -241,40 +199,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1000013617549812, guid: 632a919451a9c734e9eb5195b18750b4, type: 2}
-      propertyPath: m_Name
-      value: Main Camera
-      objectReference: {fileID: 0}
-    - target: {fileID: 20000012404719030, guid: 632a919451a9c734e9eb5195b18750b4,
-        type: 2}
-      propertyPath: orthographic size
-      value: 7.5
-      objectReference: {fileID: 0}
     - target: {fileID: 114000012673956360, guid: 632a919451a9c734e9eb5195b18750b4,
         type: 2}
       propertyPath: waveParent
       value: 
       objectReference: {fileID: 257034921}
-    - target: {fileID: 114000012673956360, guid: 632a919451a9c734e9eb5195b18750b4,
-        type: 2}
-      propertyPath: generateDistance
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012673956360, guid: 632a919451a9c734e9eb5195b18750b4,
-        type: 2}
-      propertyPath: destroyDistance
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012673956360, guid: 632a919451a9c734e9eb5195b18750b4,
-        type: 2}
-      propertyPath: xpos
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012673956360, guid: 632a919451a9c734e9eb5195b18750b4,
-        type: 2}
-      propertyPath: ypos
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 632a919451a9c734e9eb5195b18750b4, type: 2}
   m_IsPrefabParent: 0
