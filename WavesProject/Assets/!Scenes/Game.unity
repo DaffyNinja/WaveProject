@@ -630,6 +630,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013006251622, guid: f1ee312ec18b05745b79521c2adbac69,
+        type: 2}
+      propertyPath: waterSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013006251622, guid: f1ee312ec18b05745b79521c2adbac69,
+        type: 2}
+      propertyPath: waterJumpForce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013006251622, guid: f1ee312ec18b05745b79521c2adbac69,
+        type: 2}
+      propertyPath: velocityLimit
+      value: 7.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1ee312ec18b05745b79521c2adbac69, type: 2}
   m_IsPrefabParent: 0
@@ -1448,7 +1463,7 @@ MonoBehaviour:
   xspeed: 0
   yspeed: 0
   generateDistance: -25
-  destroyDistance: 50
+  destroyDistance: -25
   waveSprite: {fileID: 1000013986680110, guid: 3dd25e18c69dc4640beba35e8817390f, type: 2}
   waveParent: {fileID: 205985100}
 --- !u!114 &1696568056
@@ -1463,10 +1478,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.04
-  speedIncrease: 300
   screenDeathDis: -0.075
   rightScreenDis: 0.15
-  xDis: 11.5
+  xDis: 5
   lerpSpeed: 0.1
   ggPanel: {fileID: 924607250}
   gameOver: 0

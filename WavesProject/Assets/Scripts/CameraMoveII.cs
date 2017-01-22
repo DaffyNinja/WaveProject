@@ -4,7 +4,6 @@ using System.Collections;
 public class CameraMoveII : MonoBehaviour {
 
     public float speed;
-    public float speedIncrease;
     public float screenDeathDis;
     public float rightScreenDis;
     Vector3 pos;
@@ -17,9 +16,6 @@ public class CameraMoveII : MonoBehaviour {
     public bool gameOver;
 
     public Transform playerTrans;
-
-
-
 
 	// Use this for initialization
 	void Start ()

@@ -22,6 +22,9 @@ public class PlayerMove : MonoBehaviour
 
     public float waterJumpForce;
 
+    [Space(5)]
+    public float velocityLimit;
+
     [Header("Dive")]
     public float diveForce;
     public float diveSpeed;
@@ -125,9 +128,9 @@ public class PlayerMove : MonoBehaviour
             {
                 rig.AddForce(new Vector2(waterSpeed, 0));
 
-                if (rig.velocity.x > 15f)
+                if (rig.velocity.x > velocityLimit)
                 {
-                    rig.velocity = new Vector2(15f, rig.velocity.y);
+                    rig.velocity = new Vector2(velocityLimit, rig.velocity.y);
                 }
             }
 
