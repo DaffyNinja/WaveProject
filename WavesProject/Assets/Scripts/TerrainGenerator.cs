@@ -7,6 +7,9 @@ public class TerrainGenerator : MonoBehaviour
 
     public List<GameObject> terrainPieces;
     [Space(10)]
+    public List<GameObject> cloudObjs;
+    GameObject[] clouds;
+    [Space(10)]
     public float terrainDis;
     public float destroyNum;
 
@@ -60,6 +63,35 @@ public class TerrainGenerator : MonoBehaviour
 
         TrackCreate(pos1, pos2, pos3, pos4, pos5);
 
+        Vector2 cPos1 = new Vector2(playerTrans.position.x + 5, playerPos.y + 15);
+        Vector2 cPos2 = new Vector2(playerTrans.position.x + 5, playerPos.y + 15);
+        Vector2 cPos3 = new Vector2(playerTrans.position.x + 5, playerPos.y + 15);
+        Vector2 cPos4 = new Vector2(playerTrans.position.x + 5, playerPos.y + 15);
+
+
+    }
+
+    void CloudCreate(Vector2 cloudPos1, Vector2 cloudPos2, Vector2 cloudPos3, Vector2 cloudPos4)
+    {
+        bool createCloud = true;
+
+        foreach (GameObject c in clouds)
+        {
+            if (cloudPos1.x < c.transform.position.x)
+            {
+                createCloud = false;
+            }
+        }
+
+        if (createCloud)
+        {
+            Instantiate(cloudObjs[Random.Range(0, terrainPieces.Count)], cloudPos1, Quaternion.identity);
+            Instantiate(cloudObjs[Random.Range(0, terrainPieces.Count)], cloudPos2, Quaternion.identity);
+            Instantiate(cloudObjs[Random.Range(0, terrainPieces.Count)], cloudPos3, Quaternion.identity);
+            Instantiate(cloudObjs[Random.Range(0, terrainPieces.Count)], cloudPos4, Quaternion.identity);
+
+
+        }
     }
 
     void TrackCreate(Vector2 trackPos1, Vector2 trackPos2, Vector2 trackPos3, Vector2 trackPos4, Vector2 trackPos5)
