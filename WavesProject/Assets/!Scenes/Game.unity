@@ -596,7 +596,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 755179805}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.679993, y: 3.15, z: 10}
+  m_LocalPosition: {x: 35.36, y: 3.15, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -928,7 +928,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isEasy: 1
   easyTime: 15
-  easyDebriSpwnTime: 3.5
+  easyDebriSpwnTime: 2
   easyWaveHeight: 0.5
   easyWaveFrequency: 0.75
   easyCameraSpeed: 0.05

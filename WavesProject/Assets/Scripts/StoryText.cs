@@ -12,6 +12,7 @@ public class StoryText : MonoBehaviour
     public Text storyTextUI;
     Color texta;
     int index = 0;
+    int length;
 
     public float textTime;
     public float textStayTime;
@@ -25,7 +26,11 @@ public class StoryText : MonoBehaviour
     {
         timer = 0f;
         stayTimer = 0;
+
+        length = Storytexts.Length;
     }
+
+    
 
     // Update is called once per frame
     void Update()
@@ -50,13 +55,13 @@ public class StoryText : MonoBehaviour
         {
             stayTimer += Time.deltaTime;
 
-            storyTextUI.text = Storytexts[index];
+            if (index < length)
+            {
+                storyTextUI.text = Storytexts[index];
+            }
 
             if (stayTimer >= textStayTime)
             {
-
-
-               
 
                 textStayonScreen = false;
                 stayTimer = 0;
