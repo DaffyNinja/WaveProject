@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class StoryText : MonoBehaviour
 {
+
+
     [TextArea]
     public string[] Storytexts;
-
     [Space(5)]
     public Text storyTextUI;
     Color texta;
@@ -28,6 +29,8 @@ public class StoryText : MonoBehaviour
         stayTimer = 0;
 
         length = Storytexts.Length;
+
+        timer = textTime;
     }
 
     
@@ -48,8 +51,6 @@ public class StoryText : MonoBehaviour
 
             timer = 0;
         }
-
-
 
         if (textStayonScreen)
         {

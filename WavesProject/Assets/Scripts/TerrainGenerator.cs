@@ -88,7 +88,7 @@ public class TerrainGenerator : MonoBehaviour
 
         foreach (GameObject c in clouds)
         {
-            if (cloudPos1.x < c.transform.position.x + 45f)
+            if (cloudPos1.x < c.transform.position.x + 120f)
             {
                 createCloud = false;
             }
