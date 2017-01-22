@@ -360,6 +360,52 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c288a6974b42e0143983cdd60589b199, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &304809048
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4000014131019116, guid: 2ad2dcfdc5f84244da7d723fceb619d9, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 815.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014131019116, guid: 2ad2dcfdc5f84244da7d723fceb619d9, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -4.5170765
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014131019116, guid: 2ad2dcfdc5f84244da7d723fceb619d9, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014131019116, guid: 2ad2dcfdc5f84244da7d723fceb619d9, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014131019116, guid: 2ad2dcfdc5f84244da7d723fceb619d9, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014131019116, guid: 2ad2dcfdc5f84244da7d723fceb619d9, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014131019116, guid: 2ad2dcfdc5f84244da7d723fceb619d9, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000014131019116, guid: 2ad2dcfdc5f84244da7d723fceb619d9, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011217162212, guid: 2ad2dcfdc5f84244da7d723fceb619d9, type: 2}
+      propertyPath: m_Name
+      value: ROCKS foreground front (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 2ad2dcfdc5f84244da7d723fceb619d9, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &432987002
 Prefab:
   m_ObjectHideFlags: 0
@@ -1012,13 +1058,13 @@ MonoBehaviour:
   medDebriSpwnTime: 1
   medWaveHeight: 0.75
   medWaveFrequency: 1
-  mediumCameraSpeed: 0.1
+  mediumCameraSpeed: 0.075
   hardTime: 35
   isHard: 0
   hardDebriSpwnTime: 0.75
   hardWaveHeight: 1
   hardWaveFrequency: 1.25
-  hardCameraSpeed: 0.015
+  hardCameraSpeed: 0.1
   pause: 0
   camMove: {fileID: 1696568056}
   debrisSpwn: {fileID: 755179807}
@@ -1055,7 +1101,7 @@ MonoBehaviour:
   terrainPieces:
   - {fileID: 1000011217162212, guid: 2ad2dcfdc5f84244da7d723fceb619d9, type: 2}
   terrainDis: 25.5
-  destroyNum: 25
+  destroyNum: 35
   yDis: 5.5
   playerTrans: {fileID: 433610289}
 --- !u!114 &1340780119
