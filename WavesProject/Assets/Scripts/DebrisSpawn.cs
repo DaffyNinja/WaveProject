@@ -8,8 +8,6 @@ public class DebrisSpawn : MonoBehaviour {
     [Space(10)]
     public float spawnTime;
     float timer;
-    //[Space(5)]
-    //public float speed;
     [Space(10)]
     public Transform debrisParent;
     public float destroyDistance;
@@ -18,6 +16,8 @@ public class DebrisSpawn : MonoBehaviour {
     GameObject player;
     GameObject[] tracker = new GameObject[100];
     int counter;
+
+    float rng;
 
     bool spawn;
     bool create;
@@ -36,9 +36,11 @@ public class DebrisSpawn : MonoBehaviour {
         
         if (spawn == true)
         {
+            rng = Random.Range(spawnTime / 4f, -spawnTime / 2f);
+
             timer += Time.deltaTime;
 
-            if (timer >= spawnTime)
+            if (timer >= spawnTime + rng)
             {
                 create = true;
                 timer = 0;
@@ -50,7 +52,11 @@ public class DebrisSpawn : MonoBehaviour {
 
             if (create == true)
             {
-                debris = (GameObject)Instantiate(debrisObj[Random.Range(0, debrisObj.Count)], new Vector3(transform.position.x,transform.position.y,1), Quaternion.identity);
+                Quaternion rotation = Quaternion.identity;
+                rng = Random.Range(0f, 360f);
+                rotation.eulerAngles = new Vector3(0, 0, rng);
+                debris = (GameObject)Instantiate(debrisObj[Random.Range(0, debrisObj.Count)], new Vector3(transform.position.x, transform.position.y, 1), rotation);
+
                 debris.transform.parent = debrisParent;
                 tracker[counter] = debris;
                 counter++;
