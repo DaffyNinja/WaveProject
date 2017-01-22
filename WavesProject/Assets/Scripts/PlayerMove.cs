@@ -4,6 +4,15 @@ using FMOD.Studio;
 
 public class PlayerMove : MonoBehaviour
 {
+    public bool isPC;
+    public bool isMobile;
+
+    //Mobile
+    bool leftPress;
+    bool rightPress;
+    bool downPress;
+    bool upPress;
+
 
     [Header("Land")]
     public float landSpeed;
@@ -32,9 +41,6 @@ public class PlayerMove : MonoBehaviour
     bool goDive;
 
     float diveTimer;
-    bool diving;
-
-    float timer = 0f;
 
     // Add Dive
 
@@ -59,8 +65,6 @@ public class PlayerMove : MonoBehaviour
 
         footstepsSFX = FMODUnity.RuntimeManager.CreateInstance("event:/sfx/sfx_Footsteps");
         footstepsSFX.getParameter("end", out musicEndParam);
-
-
 
     }
 
@@ -95,16 +99,30 @@ public class PlayerMove : MonoBehaviour
                 footstepsSFX.start();
             }
 
-
-
-            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+            if (isPC)
             {
-                rig.AddForce(new Vector2(-landSpeed, 0));
+                if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))  // Left
+                {
+                    rig.AddForce(new Vector2(-landSpeed, 0));
 
+                }
+                else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) // Right
+                {
+                    rig.AddForce(new Vector2(landSpeed, 0));
+                }
             }
-            else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+            else if (isMobile)
             {
-                rig.AddForce(new Vector2(landSpeed, 0));
+                if (leftPress == true && rightPress == false) //Left
+                {
+                    rig.AddForce(new Vector2(-landSpeed, 0));
+
+                }
+                else if (rightPress == true && leftPress == false) //Right
+                {
+                    rig.AddForce(new Vector2(landSpeed, 0));
+                }
+
             }
         }
         else if (inWater)
@@ -123,62 +141,122 @@ public class PlayerMove : MonoBehaviour
                 waterSFX.start();
             }
 
-            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+            if (isPC)
             {
-                rig.AddForce(new Vector2(-waterSpeed, 0));
-
-            }
-            else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-            {
-                rig.AddForce(new Vector2(waterSpeed, 0));
-
-                if (rig.velocity.x > velocityLimit)
+                if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) // Left
                 {
-                    rig.velocity = new Vector2(velocityLimit, rig.velocity.y);
+                    rig.AddForce(new Vector2(-waterSpeed, 0));
+
                 }
-            }
-
-
-            if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
-            {
-                diving = true;
-                diveTimer = 0;
-            }
-
-            //diving continues, count the timer and add the force accordigly
-            if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
-            {
-
-                diveTimer += Time.deltaTime;
-
-                if (diveTimer >= 2f)
+                else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))  // Right
                 {
-                    inSea = false;
-                }
-                else
-                {
-                    inSea = true;
-                }
+                    rig.AddForce(new Vector2(waterSpeed, 0));
 
-                if (inSea == true)
-                {
-                    rig.AddForce(new Vector2(0, -diveForce + (diveForce * diveTimer) / 2f));
-
-                    if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+                    if (rig.velocity.x > velocityLimit)
                     {
-                        rig.AddForce(new Vector2(-diveSpeed, 0));
-
+                        rig.velocity = new Vector2(velocityLimit, rig.velocity.y);
                     }
-                    else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+                }
+
+                if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))  // Down/Dive
+                {
+                    diveTimer = 0;
+                }
+
+                //diving continues, count the timer and add the force accordigly
+                if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))   // Dwon/Dive
+                {
+
+                    diveTimer += Time.deltaTime;
+
+                    if (diveTimer >= 2f)
                     {
-                        rig.AddForce(new Vector2(diveSpeed, 0));
+                        inSea = false;
+                    }
+                    else
+                    {
+                        inSea = true;
                     }
 
+                    if (inSea == true)
+                    {
+                        rig.AddForce(new Vector2(0, -diveForce + (diveForce * diveTimer) / 2f));
+
+                        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))   // Left
+                        {
+                            rig.AddForce(new Vector2(-diveSpeed, 0));
+
+                        }
+                        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) // Right
+                        {
+                            rig.AddForce(new Vector2(diveSpeed, 0));
+                        }
+
+                    }
+                    else
+                    {
+                        rig.AddForce(new Vector2(0, diveForce / 10));
+                    }
                 }
-                else
+            }
+            else if (isMobile)
+            {
+                if (leftPress == true && rightPress == false) // Left
                 {
-                    rig.AddForce(new Vector2(0, diveForce / 10));
+                    rig.AddForce(new Vector2(-waterSpeed, 0));
+
                 }
+                else if (rightPress == true && leftPress == false)  // Right
+                {
+                    rig.AddForce(new Vector2(waterSpeed, 0));
+
+                    if (rig.velocity.x > velocityLimit)
+                    {
+                        rig.velocity = new Vector2(velocityLimit, rig.velocity.y);
+                    }
+                }
+
+                if (downPress == true && upPress == false)  // Down/Dive
+                {
+                    diveTimer = 0;
+                }
+
+                //diving continues, count the timer and add the force accordigly
+                if (downPress == true && upPress == false)   // Dwon/Dive
+                {
+
+                    diveTimer += Time.deltaTime;
+
+                    if (diveTimer >= 2f)
+                    {
+                        inSea = false;
+                    }
+                    else
+                    {
+                        inSea = true;
+                    }
+
+                    if (inSea == true)
+                    {
+                        rig.AddForce(new Vector2(0, -diveForce + (diveForce * diveTimer) / 2f));
+
+                        if (leftPress == true && rightPress == false)   // Left
+                        {
+                            rig.AddForce(new Vector2(-diveSpeed, 0));
+
+                        }
+                        else if (rightPress == true && leftPress == false) // Right
+                        {
+                            rig.AddForce(new Vector2(diveSpeed, 0));
+                        }
+
+                    }
+                    else
+                    {
+                        rig.AddForce(new Vector2(0, diveForce / 10));
+                    }
+                }
+
             }
 
         }
@@ -190,39 +268,93 @@ public class PlayerMove : MonoBehaviour
             waterSFX.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             footstepsSFX.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
 
-
-            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+            if (isPC)
             {
-                rig.AddForce(new Vector2(-airMoveSpeed, 0));
+                if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+                {
+                    rig.AddForce(new Vector2(-airMoveSpeed, 0));
 
+                }
+                else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+                {
+                    rig.AddForce(new Vector2(airMoveSpeed, 0));
+
+                }
             }
-            else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+            else if (isMobile)
             {
-                rig.AddForce(new Vector2(airMoveSpeed, 0));
+                if (leftPress == true && rightPress == false)   // Left
+                {
+                    rig.AddForce(new Vector2(-airMoveSpeed, 0));
 
+                }
+                else if (rightPress == true && leftPress == false)   // Right
+                {
+                    rig.AddForce(new Vector2(airMoveSpeed, 0));
+                }
             }
-
         }
 
-
-        if (Input.GetKeyDown(KeyCode.Space) && grounded || Input.GetKeyDown(KeyCode.W) && grounded || Input.GetKeyDown(KeyCode.UpArrow) && grounded)
+        if (isPC)
         {
-            rig.AddForce(new Vector2(0, jumpForce));
+            if (Input.GetKeyDown(KeyCode.Space) && grounded || Input.GetKeyDown(KeyCode.W) && grounded || Input.GetKeyDown(KeyCode.UpArrow) && grounded)
+            {
+                rig.AddForce(new Vector2(0, jumpForce));
+
+                animate.SetBool("jumpAni", true);
+
+            }
+            else if (Input.GetKey(KeyCode.W) && inWater || Input.GetKey(KeyCode.Space) && inWater || Input.GetKey(KeyCode.UpArrow) && inWater)
+            {
+                rig.AddForce(new Vector2(0, waterJumpForce));
 
 
-            animate.SetBool("jumpAni", true);
-
+                animate.SetBool("jumpAni", true);
+            }
         }
-        else if (Input.GetKey(KeyCode.W) && inWater || Input.GetKey(KeyCode.Space) && inWater || Input.GetKey(KeyCode.UpArrow) && inWater)
+        else if (isMobile)
         {
-            rig.AddForce(new Vector2(0, waterJumpForce));
+            if (upPress == true && grounded && downPress == false || upPress == true && grounded && downPress == false || upPress == true && grounded && downPress == false)  // Up
+            {
+                rig.AddForce(new Vector2(0, jumpForce));
 
+                animate.SetBool("jumpAni", true);
 
-            animate.SetBool("jumpAni", true);
+            }
+            else if (upPress == true && inWater && downPress == false || upPress == true && inWater && downPress == false || upPress == true && inWater && downPress == false)   // Up
+            {
+                rig.AddForce(new Vector2(0, waterJumpForce));
 
-
+                animate.SetBool("jumpAni", true);
+            }
         }
 
     }
+
+    public void LeftButton()
+    {
+        leftPress = true;
+        rightPress = false;
+    }
+
+    public void RightButton()
+    {
+        rightPress = true;
+        leftPress = false;
+    }
+
+    public void UpButton()
+    {
+        upPress = true;
+        downPress = false;
+    }
+
+    public void DownButton()
+    {
+        downPress = true;
+        upPress = false;
+    }
+
+
 
 }
