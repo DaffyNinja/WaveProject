@@ -314,52 +314,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
---- !u!1001 &303318439
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4000011981261524, guid: c288a6974b42e0143983cdd60589b199, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 847.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000011981261524, guid: c288a6974b42e0143983cdd60589b199, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000011981261524, guid: c288a6974b42e0143983cdd60589b199, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000011981261524, guid: c288a6974b42e0143983cdd60589b199, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000011981261524, guid: c288a6974b42e0143983cdd60589b199, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000011981261524, guid: c288a6974b42e0143983cdd60589b199, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000011981261524, guid: c288a6974b42e0143983cdd60589b199, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000011981261524, guid: c288a6974b42e0143983cdd60589b199, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000013598473290, guid: c288a6974b42e0143983cdd60589b199, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: c288a6974b42e0143983cdd60589b199, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1001 &304809048
 Prefab:
   m_ObjectHideFlags: 0
@@ -397,7 +351,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000014131019116, guid: 2ad2dcfdc5f84244da7d723fceb619d9, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1000011217162212, guid: 2ad2dcfdc5f84244da7d723fceb619d9, type: 2}
       propertyPath: m_Name
@@ -443,7 +397,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000014131019116, guid: 2ad2dcfdc5f84244da7d723fceb619d9, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ad2dcfdc5f84244da7d723fceb619d9, type: 2}
@@ -1100,6 +1054,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   terrainPieces:
   - {fileID: 1000011217162212, guid: 2ad2dcfdc5f84244da7d723fceb619d9, type: 2}
+  cloudObjs:
+  - {fileID: 1000012931129482, guid: fe61e17b3aed69242ac08184d019e1db, type: 2}
   terrainDis: 25.5
   destroyNum: 35
   yDis: 5.5

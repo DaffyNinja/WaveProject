@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Track
   - Water
+  - Cloud
   layers:
   - Default
   - TransparentFX

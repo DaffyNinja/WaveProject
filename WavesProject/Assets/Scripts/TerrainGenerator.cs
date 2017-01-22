@@ -32,6 +32,7 @@ public class TerrainGenerator : MonoBehaviour
     void Update()
     {
         tracks = GameObject.FindGameObjectsWithTag("Track");
+        clouds = GameObject.FindGameObjectsWithTag("Cloud");
 
         TrackMaintanennce();
     }
@@ -49,6 +50,14 @@ public class TerrainGenerator : MonoBehaviour
 
         }
 
+        foreach (GameObject c in clouds)
+        {
+            if (c.transform.position.x < playerTrans.position.x - destroyNum)
+            {
+                Destroy(c);
+            }
+        }
+
         TrackPositions();
 
     }
@@ -63,10 +72,12 @@ public class TerrainGenerator : MonoBehaviour
 
         TrackCreate(pos1, pos2, pos3, pos4, pos5);
 
-        Vector2 cPos1 = new Vector2(playerTrans.position.x + 5, playerPos.y + 15);
-        Vector2 cPos2 = new Vector2(playerTrans.position.x + 5, playerPos.y + 15);
-        Vector2 cPos3 = new Vector2(playerTrans.position.x + 5, playerPos.y + 15);
-        Vector2 cPos4 = new Vector2(playerTrans.position.x + 5, playerPos.y + 15);
+        Vector2 cPos1 = new Vector2(playerTrans.position.x + Random.Range(-10,15), playerPos.y + 5.75f);
+        Vector2 cPos2 = new Vector2(playerTrans.position.x + Random.Range(-10, 15), playerPos.y + 5.75f);
+        Vector2 cPos3 = new Vector2(playerTrans.position.x + Random.Range(-10, 15), playerPos.y + 5.75f);
+        Vector2 cPos4 = new Vector2(playerTrans.position.x + Random.Range(-10, 15), playerPos.y + 5.75f);
+
+        CloudCreate(cPos1, cPos2, cPos3, cPos4);
 
 
     }
@@ -77,7 +88,7 @@ public class TerrainGenerator : MonoBehaviour
 
         foreach (GameObject c in clouds)
         {
-            if (cloudPos1.x < c.transform.position.x)
+            if (cloudPos1.x < c.transform.position.x + 45f)
             {
                 createCloud = false;
             }
@@ -89,8 +100,6 @@ public class TerrainGenerator : MonoBehaviour
             Instantiate(cloudObjs[Random.Range(0, terrainPieces.Count)], cloudPos2, Quaternion.identity);
             Instantiate(cloudObjs[Random.Range(0, terrainPieces.Count)], cloudPos3, Quaternion.identity);
             Instantiate(cloudObjs[Random.Range(0, terrainPieces.Count)], cloudPos4, Quaternion.identity);
-
-
         }
     }
 
