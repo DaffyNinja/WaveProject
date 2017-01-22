@@ -86,6 +86,8 @@ public class PlayerMove : MonoBehaviour
             animate.SetBool("InWaterAn", false);
             animate.SetBool("onGround", true);
 
+            animate.SetBool("jumpAni", false);
+
             FMOD.Studio.PLAYBACK_STATE play_Foot;
             footstepsSFX.getPlaybackState(out play_Foot);
             if (play_Foot != FMOD.Studio.PLAYBACK_STATE.PLAYING)
@@ -111,6 +113,8 @@ public class PlayerMove : MonoBehaviour
 
             animate.SetBool("InWaterAn", true);
             animate.SetBool("onGround", false);
+
+            animate.SetBool("jumpAni", false);
 
             FMOD.Studio.PLAYBACK_STATE play_Water;
             waterSFX.getPlaybackState(out play_Water);
@@ -182,6 +186,7 @@ public class PlayerMove : MonoBehaviour
         {
             animate.SetBool("InWaterAn", false);
 
+
             waterSFX.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             footstepsSFX.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
 
@@ -207,8 +212,6 @@ public class PlayerMove : MonoBehaviour
 
             animate.SetBool("jumpAni", true);
 
-            //  transform.localEulerAngles = new Vector3(0, 0, 0);
-            //   rig.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
         else if (Input.GetKey(KeyCode.W) && inWater || Input.GetKey(KeyCode.Space) && inWater || Input.GetKey(KeyCode.UpArrow) && inWater)
         {

@@ -16,14 +16,14 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 4000010060643622}
-  - 212: {fileID: 212000010454724134}
-  - 95: {fileID: 95000011432328416}
-  - 61: {fileID: 61000010759376652}
-  - 50: {fileID: 50000012866047344}
-  - 114: {fileID: 114000013006251622}
+  - component: {fileID: 4000010060643622}
+  - component: {fileID: 212000010454724134}
+  - component: {fileID: 95000011432328416}
+  - component: {fileID: 61000010759376652}
+  - component: {fileID: 50000012866047344}
+  - component: {fileID: 114000013006251622}
   m_Layer: 10
   m_Name: New Player
   m_TagString: Player
@@ -36,10 +36,10 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 4000010709982064}
-  - 58: {fileID: 58000014073275464}
+  - component: {fileID: 4000010709982064}
+  - component: {fileID: 58000014073275464}
   m_Layer: 10
   m_Name: Feet
   m_TagString: Untagged
@@ -56,11 +56,11 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 839, y: 0.89, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000010709982064}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4000010709982064
 Transform:
   m_ObjectHideFlags: 1
@@ -70,23 +70,26 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -3.29, z: 0}
   m_LocalScale: {x: 2.6180277, y: 2.6180272, z: 2.6180272}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000010060643622}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50000012866047344
 Rigidbody2D:
-  serializedVersion: 2
+  serializedVersion: 4
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011750133714}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_IsKinematic: 0
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -153,9 +156,10 @@ MonoBehaviour:
   groundCheck: 1.25
   grounded: 0
   airMoveSpeed: 5
-  waterSpeed: 7
+  waterSpeed: 10
   inWater: 0
-  waterJumpForce: 20
+  waterJumpForce: 10
+  velocityLimit: 7.5
   diveForce: 50
   diveSpeed: 50
   inSea: 0
@@ -173,7 +177,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 0
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -181,7 +187,7 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 1
+  m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
