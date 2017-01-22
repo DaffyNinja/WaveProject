@@ -6,13 +6,12 @@ public class PlayerMove : MonoBehaviour
 {
     public bool isPC;
     public bool isMobile;
-
+    [Space(5)]
     //Mobile
     bool leftPress;
     bool rightPress;
     bool downPress;
     bool upPress;
-
 
     [Header("Land")]
     public float landSpeed;
@@ -337,10 +336,20 @@ public class PlayerMove : MonoBehaviour
         rightPress = false;
     }
 
+    public void LeftFalse()
+    {
+        leftPress = false;
+    }
+
     public void RightButton()
     {
         rightPress = true;
         leftPress = false;
+    }
+
+    public void RightFalse()
+    {
+        rightPress = false;
     }
 
     public void UpButton()
@@ -349,12 +358,21 @@ public class PlayerMove : MonoBehaviour
         downPress = false;
     }
 
+    public void UpFalse()
+    {
+        upPress = false;
+    }
+
     public void DownButton()
     {
         downPress = true;
         upPress = false;
     }
 
+    public void DownFalse()
+    {
+        downPress = false;
+    }
 
 
 }
