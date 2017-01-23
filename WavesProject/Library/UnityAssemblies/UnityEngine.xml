@@ -22777,6 +22777,11 @@ Only usable on Android, Windows Phone or Windows Tablets.</para>
         <para>iPod Touch, fifth generation.</para>
       </summary>
     </member>
+    <member name="F:UnityEngine.iOS.DeviceGeneration.iPodTouch6Gen">
+      <summary>
+        <para>iPod Touch, sixth generation.</para>
+      </summary>
+    </member>
     <member name="F:UnityEngine.iOS.DeviceGeneration.iPodTouchUnknown">
       <summary>
         <para>Yet unknown iPod Touch.</para>
@@ -39551,11 +39556,6 @@ See Also: ReflectionProbeTimeSlicingMode.</para>
     <member name="F:UnityEngine.Rendering.BuiltinShaderType.ScreenSpaceShadows">
       <summary>
         <para>Shader used for screen-space cascaded shadows.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEngine.Rendering.BuiltinShaderType.Sprite">
-      <summary>
-        <para>Default shader used by sprites.</para>
       </summary>
     </member>
     <member name="T:UnityEngine.Rendering.CameraEvent">

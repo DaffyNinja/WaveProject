@@ -121,7 +121,7 @@ PlayerSettings:
     16:9: 1
     Others: 0
   bundleIdentifier: com.Caligula.TheEternalTide
-  bundleVersion: 1.0
+  bundleVersion: 1.1
   preloadedAssets: []
   metroInputSource: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -209,12 +209,13 @@ PlayerSettings:
     height: 180
     banner: {fileID: 0}
   androidGamepadSupportLevel: 0
-  resolutionDialogBanner: {fileID: 0}
+  resolutionDialogBanner: {fileID: 2800000, guid: 2ff1c806113aeba4b9e23c2ae24232b3,
+    type: 3}
   m_BuildTargetIcons:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 0}
+      m_Icon: {fileID: 2800000, guid: df9ade7d20970c140bcad733ef917298, type: 3}
       m_Width: 128
       m_Height: 128
   - m_BuildTarget: Android
