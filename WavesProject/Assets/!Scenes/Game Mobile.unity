@@ -877,6 +877,16 @@ Prefab:
       propertyPath: rightBut
       value: 
       objectReference: {fileID: 693522254}
+    - target: {fileID: 58000014073275464, guid: f1ee312ec18b05745b79521c2adbac69,
+        type: 2}
+      propertyPath: m_Radius
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 58000014073275464, guid: f1ee312ec18b05745b79521c2adbac69,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: -0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1ee312ec18b05745b79521c2adbac69, type: 2}
   m_IsPrefabParent: 0

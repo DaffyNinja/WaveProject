@@ -43,6 +43,9 @@ public class Wave_VerIIII : MonoBehaviour {
     float totalLength = 0f;
     float startPos;
 
+    float rngAlt = 0f;
+    float rngFeq = 0f;
+    bool rngTime = false;    
 
     float pi = (float)Math.PI;
 
@@ -149,7 +152,18 @@ public class Wave_VerIIII : MonoBehaviour {
 
             if (time >= startDelay && i == generator)
             {
-                newHeight[i] = waveHeight * (float)Math.Cos((time * frequency / 12) * 180 / pi) + ypos;
+                newHeight[i] = (waveHeight + rngAlt) * (float)Math.Cos((time * (frequency + rngFeq) / 12) * 180 / pi) + ypos;
+
+                if ((float)Math.Cos((time * (frequency + rngFeq) / 12) * 180 / pi) > 0 && rngTime == true)
+                {
+                    rngTime = false;
+                    rngAlt = UnityEngine.Random.Range(-1f, 1f);
+                    rngFeq = UnityEngine.Random.Range(-0.5f, 0.5f);
+                }
+                else if ((float)Math.Cos((time * (frequency + rngFeq) / 12) * 180 / pi) < 0)
+                {
+                    rngTime = true;
+                }
 
             }
 
